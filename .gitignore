@@ -51,3 +51,4 @@ $RECYCLE.BIN/
 __pycache__
 venv/
 env/
+*.sqlite3
