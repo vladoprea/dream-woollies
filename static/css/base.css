@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@200,300,400,500,600,700,800,900&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    height: calc(100vh-164px);
+    font-family: 'Muli', sans-serif;
+}
+
+.homepage-image {
+    background: url('/media/homepage.jpg');
+    background-size: cover;
+}
