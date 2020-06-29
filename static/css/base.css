@@ -5,11 +5,77 @@ html {
 }
 
 body {
-    height: calc(100vh-164px);
+    height: calc(100vh - 164px);
     font-family: 'Muli', sans-serif;
 }
 
 .homepage-image {
     background: url('/media/homepage.jpg');
     background-size: cover;
+}
+
+/* From Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.btn-black {
+    background: #1d1141;
+    color: white;
+}
+
+.shop-now-button {
+    background: rgb(255, 59, 59);
+    color: white;
+    min-width: 160px;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+}
+
+.text-purple {
+    color: #1d1141 !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
+
+  /* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
 }
