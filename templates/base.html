@@ -37,7 +37,9 @@
     <title>Dream woolies {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
+    <!--Header and navbar responsive on all devices. -->
     <header class="container-fluid fixed-top">
+      <!--Logo visible only on large and bigger devices-->
       <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
         <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link">
@@ -58,6 +60,7 @@
             </div>
           </form>
         </div>
+        <!--Social media links invisible on smaller than large devices-->
         <div class="col-12 col-lg-3 text-center my-auto py-1 py-lg-0">
           <ul class="list-inline list-unstyled my-0">
             <li class="list-inline-item">
@@ -110,6 +113,8 @@
           </ul>
         </div>
       </div>
+      <!--Top header and navbar for smaller than large devices. Menu available on toggle button.
+      Icon that unfolds search bar.-->
       <div class="row bg-white">
         <nav class="navbar navbar-expand-lg navbar-light main-nav-style w-100">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
