@@ -11,9 +11,17 @@ body {
 
 .homepage-image {
     background: url('/media/homepage.jpg');
-    background-size: cover;
+    background-size: contain; 
+    background-repeat: no-repeat;
 }
 
+.homepage-title {
+    background: url('/media/homepage-title.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 70px;
+}
 /*--------Header and Navbar-------*/
 
 .main-nav-style {
@@ -90,5 +98,11 @@ body {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 80px;
     }
 }
