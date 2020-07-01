@@ -14,12 +14,14 @@ body {
     background-size: cover;
 }
 
+/*--------Header and Navbar-------*/
+
 .main-nav-style {
     background-color: #FFBA00;
     color: #000;
 }
 
-/* From Bulma */
+/* From Bulma for icons */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -33,11 +35,7 @@ body {
     width: 2.5rem;
 }
 
-.main-logo-link {
-    width: fit-content;
-}
-
-.btn-black {
+.btn-purple {
     background: #1d1141;
     color: white;
 }
@@ -48,14 +46,15 @@ body {
     min-width: 160px;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
+.btn-purple:hover,
+.btn-purple:active,
+.btn-purple:focus {
+    background: #000;
     color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #1d1141 !important;
 }
 
 .text-purple {
@@ -64,10 +63,6 @@ body {
 
 .text-black {
     color: #000 !important;
-}
-
-.navbar-light .navbar-nav .nav-link:hover {
-    color: rgb(102, 102, 102) !important;
 }
 
 .border-black {
