@@ -9,10 +9,11 @@ body {
     font-family: 'Muli', sans-serif;
 }
 
-.homepage-image {
+.homepage-bg {
     background: url('/media/homepage.jpg');
-    background-size: contain; 
-    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    min-height: 400px;
 }
 
 .homepage-title {
@@ -20,8 +21,9 @@ body {
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 70px;
+    min-height: 50px;
 }
+
 /*--------Header and Navbar-------*/
 
 .main-nav-style {
@@ -87,6 +89,7 @@ body {
   }
 
   /* fixed top navbar only on medium and up */
+  /* homepage first section positioning and sizing */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -99,10 +102,19 @@ body {
     .header-container {
         padding-top: 164px;
     }
+    .homepage-title {
+        min-height: 70px;
+    }
 }
 
 @media (max-width: 991px) {
     .header-container {
         padding-top: 80px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .homepage-style {
+        margin-top: 25px;
     }
 }
