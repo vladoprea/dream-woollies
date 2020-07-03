@@ -113,7 +113,7 @@ body {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 174px;
     }
     .homepage-title {
         min-height: 70px;
@@ -122,7 +122,7 @@ body {
 
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 80px;
+        padding-top: 116px;
     }
 }
 
