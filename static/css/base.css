@@ -7,7 +7,6 @@ html {
 body {
     height: calc(100vh - 164px);
     font-family: 'Muli', sans-serif;
-    background-color: #f9ff7885;
     color: #000;
 }
 
@@ -84,6 +83,15 @@ body {
     background-color: #000;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #f9ff7885;
+    z-index: -1;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
