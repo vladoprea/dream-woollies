@@ -1,0 +1,42 @@
+[
+  {
+    "pk": 1,
+    "model": "products.collection",
+    "fields": {
+      "name": "felted_brooches",
+      "friendly_name": "Brooches"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.collection",
+    "fields": {
+      "name": "toys",
+      "friendly_name": "Felted Toys"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.collection",
+    "fields": {
+      "name": "christmas_deco",
+      "friendly_name": "Christmas Deco"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.collection",
+    "fields": {
+      "name": "home_deco",
+      "friendly_name": "Home Deco"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.collection",
+    "fields": {
+      "name": "wool_paintings",
+      "friendly_name": "Wool Paintings"
+    }
+  }
+]

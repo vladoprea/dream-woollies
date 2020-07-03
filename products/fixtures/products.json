@@ -1,0 +1,842 @@
+[
+  {
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007301",
+      "name": "Happy parsnip",
+      "description": "Needle-felted mystical creature from underground inspired by poplars.",
+      "price": 11.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 18,
+      "width": 7,
+      "image": "mystical_creature.jpg"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007302",
+      "name": "Animal baby mobile",
+      "description": "Custom-made animal baby mobile made from fine felt and painted bamboo wood.",
+      "price": 35.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 45,
+      "width": 30,
+      "image": "animal_carousel.jpg"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007303",
+      "name": "Black dragon",
+      "description": "Needle and wet-felted dragon made from merino wool, wire armature for the wings and plastic eyes.",
+      "price": 10.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 9,
+      "width": 10,
+      "image": "felted_dragon.jpg"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007304",
+      "name": "Panda bear",
+      "description": "Needle and wet-felted panda bear made from merino wool, with bamboo stick and plastic eyes.",
+      "price": 8.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 7,
+      "width": 3,
+      "image": "felted_panda.jpg"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007305",
+      "name": "Otter",
+      "description": "Needle felted sea otter with clam.",
+      "price": 7.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 6,
+      "width": 3,
+      "image": "felted_otter.jpg"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007306",
+      "name": "Fluffy animals carousel",
+      "description": "Sheep llama alpaca baby mobile.",
+      "price": 26.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 25,
+      "width": 14,
+      "image": "animal_carousel_sheep.jpg"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007307",
+      "name": "Felted penguins",
+      "description": "Needle felted emperor mother with her baby.",
+      "price": 12.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 7,
+      "width": 3,
+      "image": "felted_penguin.jpg"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007308",
+      "name": "Felted dog",
+      "description": "Meet Willie! He is a needle-felted dog inspired by a lovely shepherd. Made from fine merino wool using the needle-felting technique.",
+      "price": 7.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 3,
+      "width": 6.5,
+      "image": "felted_dog.jpg"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007309",
+      "name": "Mighty dragon",
+      "description": "Needle and wet-felted dragon made from merino wool, wire armature for the wings and plastic eyes.",
+      "price": 10.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 10,
+      "width": 9,
+      "image": "felted_creature.jpg"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007310",
+      "name": "Felted dynos",
+      "description": "Needle-felted green dynos made from fine merino wool through the felting technique. The wool has a Oeko-Tex 100 Quality System certification, being sustainable and safe to use for children's toys.",
+      "price": 8.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 7,
+      "width": 2.5,
+      "image": "felted_dinos.jpg"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007311",
+      "name": "Felted alpaca",
+      "description": "Needle-felted fluffy alpaca made from extra-fine merino wool.",
+      "price": 7.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 4,
+      "width": 7.5,
+      "image": "felted_alpaca.jpg"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007312",
+      "name": "Felted seal baby",
+      "description": "Needle felted seal baby from merino wool.",
+      "price": 5.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 5,
+      "width": 2,
+      "image": "felted_seal.jpg"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007313",
+      "name": "Felted giraffe",
+      "description": "Needle-felted giraffe from fine merino wool /soft sculpture/ wool sculpture.",
+      "price": 10.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 14,
+      "width": 5,
+      "image": "felted_giraffe.jpg"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007314",
+      "name": "Felted llama",
+      "description": "Needle-felted llama from made from extra-fine merino wool.",
+      "price": 10.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 17,
+      "width": 6,
+      "image": "felted_lama.jpg"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007315",
+      "name": "Felted dynosaurs",
+      "description": "Needle-felted dynos made from fine merino wool through the felting technique. The wool has a Oeko-Tex 100 Quality System certification, being sustainable and safe to use for children's toys.",
+      "price": 8.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 7,
+      "width": 2.5,
+      "image": "felted_dinosaurs.jpg"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007316",
+      "name": "Felted samoyed",
+      "description": "Needle-felted Samoyed dog from merino wool and Samoyed hair.",
+      "price": 7.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 5,
+      "width": 2.5,
+      "image": "felted_wolf.jpg"
+    }
+  },
+  {
+    "pk": 17,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007317",
+      "name": "Felted sheep",
+      "description": "Needle-felted sheep using fine merino wool.",
+      "price": 5.99,
+      "collection": 2,
+      "rating": 1,
+      "height": 4,
+      "width": 2,
+      "image": "felted_sheep.jpg"
+    }
+  },
+  {
+    "pk": 18,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007318",
+      "name": "Felted yellow poppy",
+      "description": "Wet-felted yellow poppy (or sea poppy) made from fine merino wool, silk and wire armature.",
+      "price": 9.99,
+      "collection": 4,
+      "rating": 1,
+      "height": 22,
+      "width": 1,
+      "image": "yellow_poppy_deco.jpg"
+    }
+  },
+  {
+    "pk": 19,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007319",
+      "name": "Felted yellow poppy",
+      "description": "Wet-felted yellow poppy (or sea poppy) made from fine merino wool, silk and wire armature.",
+      "price": 11.99,
+      "collection": 4,
+      "rating": 1,
+      "height": 26,
+      "width": 1,
+      "image": "tulips_deco.jpg"
+    }
+  },
+  {
+    "pk": 20,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007320",
+      "name": "Sunflowers",
+      "description": "Wool painting inspired by one of the many Van Gogh's sunflower paintings.",
+      "price": 39.99,
+      "collection": 5,
+      "rating": 1,
+      "height": 32,
+      "width": 20,
+      "image": "flowers.jpg"
+    }
+  },
+  {
+    "pk": 21,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007321",
+      "name": "Seascape",
+      "description": "Wet-felted merino seascape inspired by the waters of the Adriatic.",
+      "price": 39.99,
+      "collection": 5,
+      "rating": 1,
+      "height": 25,
+      "width": 25,
+      "image": "seaside.jpg"
+    }
+  },
+  {
+    "pk": 22,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007322",
+      "name": "Dancer",
+      "description": "Needle and wet felted mystical dancer wool painting",
+      "price": 32.99,
+      "collection": 5,
+      "rating": 1,
+      "height": 20,
+      "width": 15,
+      "image": "dancer.jpg"
+    }
+  },
+  {
+    "pk": 23,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007323",
+      "name": "Rose brooch",
+      "description": "Needle and wet-felted rose brooch made from fine merino wool and a secured pin on the back.",
+      "price": 4.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 4,
+      "width": 4,
+      "image": "rose_brooch.jpg"
+    }
+  },
+  {
+    "pk": 24,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007324",
+      "name": "Bunny brooch",
+      "description": "Needle-felted bunny brooch made from extrafine merino wool and a secured pin on the back.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 3,
+      "width": 3,
+      "image": "bunny_brooch.jpg"
+    }
+  },
+  {
+    "pk": 25,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007325",
+      "name": "Panda brooch",
+      "description": "Needle-felted panda brooch made from fine merino wool and a secured pin on the back.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 3,
+      "width": 3,
+      "image": "panda_brooch.jpg"
+    }
+  },
+  {
+    "pk": 26,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007326",
+      "name": "Felted flower",
+      "description": "Wet-felted flower using fine merino wool, silk and beads. On the back it has a secured pin.",
+      "price": 4.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 4,
+      "width": 4,
+      "image": "flower_brooch.jpg"
+    }
+  },
+  {
+    "pk": 27,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007327",
+      "name": "Foxie",
+      "description": "Needle-felted fox head made from fine merino wool and a secured metal pin.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 5,
+      "width": 4,
+      "image": "fox_brooch.jpg"
+    }
+  },
+  {
+    "pk": 28,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007328",
+      "name": "Hedgehog",
+      "description": "Needle-felted hedgehog brooch made from fine merino wool on cardboard.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 3,
+      "width": 3.5,
+      "image": "hedgehog_brooch.jpg"
+    }
+  },
+  {
+    "pk": 29,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007329",
+      "name": "Birdie brooch",
+      "description": "Needle-felted robin made from fine merino wool and a secured metal pin.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 3,
+      "width": 3.5,
+      "image": "bird_brooch.jpg"
+    }
+  },
+  {
+    "pk": 30,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007330",
+      "name": "Christmas tree brooch",
+      "description": "Needle-felted Christmas tree made from fine merino wool and a secured metal pin.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 4,
+      "width": 2,
+      "image": "christmas_tree_brooch.jpg"
+    }
+  },
+  {
+    "pk": 31,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007331",
+      "name": "Octopus brooch",
+      "description": "Needle and wet-felted octopus brooch merino wool sewn beads.",
+      "price": 5.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 4,
+      "width": 7,
+      "image": "octopus_brooch.jpg"
+    }
+  },
+  {
+    "pk": 32,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007332",
+      "name": "Piggie brooch",
+      "description": "Piglet brooch made from fien merino wool and a secured pin on the back.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 3,
+      "width": 3,
+      "image": "pig_brooch.jpg"
+    }
+  },
+  {
+    "pk": 33,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007333",
+      "name": "Birdie brooch",
+      "description": "Felted bird brooch made from fine merino wool plastic eye.",
+      "price": 4.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 3,
+      "width": 4,
+      "image": "birdie_brooch.jpg"
+    }
+  },
+  {
+    "pk": 34,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007334",
+      "name": "Christmas brooch",
+      "description": "Needle-felted Christmas brooches made from fine merino wool and a secured pin on the back.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 2.5,
+      "width": 2.5,
+      "image": "felted_christmas_brooch.jpg"
+    }
+  },
+  {
+    "pk": 35,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007335",
+      "name": "Grey bird brooch",
+      "description": "Needle-felted grey bird made from fine merino wool and a secured metal pin.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 2.5,
+      "width": 3.5,
+      "image": "bird_merino_brooch.jpg"
+    }
+  },
+  {
+    "pk": 36,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007336",
+      "name": "Barn swallow brooch",
+      "description": "Needle-felted barn swallow bird made from fine merino wool and a secured metal pin.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 2.5,
+      "width": 3.5,
+      "image": "barn_merino_brooch.jpg"
+    }
+  },
+  {
+    "pk": 37,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007337",
+      "name": "Blue tit brooch",
+      "description": "Needle-felted blue tit bird made from fine merino wool and a secured metal pin.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 2.5,
+      "width": 3.5,
+      "image": "blue_tit_brooch.jpg"
+    }
+  },
+  {
+    "pk": 38,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007338",
+      "name": "Sunflower",
+      "description": "Wet-felted sunflower brooch with sewn beads.",
+      "price": 4.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 4,
+      "width": 4,
+      "image": "sunflower_brooch.jpg"
+    }
+  },
+  {
+    "pk": 39,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007339",
+      "name": "Poppy flower",
+      "description": "Wet-felted poppy flower brooch from fine merino wool.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 3,
+      "width": 3,
+      "image": "poppy_brooch.jpg"
+    }
+  },
+  {
+    "pk": 40,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007340",
+      "name": "Orange flower",
+      "description": "Wet-felted orange flower brooch from fine merino wool.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 3,
+      "width": 3,
+      "image": "orange_flower_brooch.jpg"
+    }
+  },
+  {
+    "pk": 41,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007341",
+      "name": "Snowflake flower",
+      "description": "Wet-felted snowflake flower brooch from fine merino wool.",
+      "price": 3.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 6,
+      "width": 1.5,
+      "image": "snowflake_brooch.jpg"
+    }
+  },
+  {
+    "pk": 42,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007342",
+      "name": "Blue butterfly",
+      "description": "Needle-felted blue butterfly brooch from fine merino wool.",
+      "price": 4.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 3,
+      "width": 4,
+      "image": "butterfly_brooch.jpg"
+    }
+  },
+  {
+    "pk": 43,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007343",
+      "name": "Royal butterfly",
+      "description": "Needle-felted royal butterfly brooch from fine merino wool.",
+      "price": 4.99,
+      "collection": 1,
+      "rating": 1,
+      "height": 3,
+      "width": 4,
+      "image": "royal_butterfly_brooch.jpg"
+    }
+  },
+  {
+    "pk": 44,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007344",
+      "name": "Blue hat elf",
+      "description": "Needle-felted Christmas elf made from fine merino wool, glass beads and pom-poms.",
+      "price": 5.99,
+      "collection": 3,
+      "rating": 1,
+      "height": 5,
+      "width": 2,
+      "image": "christmas_elf.jpg"
+    }
+  },
+  {
+    "pk": 45,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007345",
+      "name": "Decorated Christmas tree",
+      "description": "Decorated Christmas tree with Santa on top and little owls made from fine merino wool.",
+      "price": 49.99,
+      "collection": 3,
+      "rating": 1,
+      "height": 100,
+      "width": 60,
+      "image": "christmas_tree_ornaments.jpg"
+    }
+  },
+  {
+    "pk": 46,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007346",
+      "name": "Felted santa",
+      "description": "Needle-felted Santa made from fine merino wool, glass beads and pom-poms with plastic eyes.",
+      "price": 5.99,
+      "collection": 3,
+      "rating": 1,
+      "height": 7,
+      "width": 2.5,
+      "image": "santa.jpg"
+    }
+  },
+  {
+    "pk": 47,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007347",
+      "name": "Owl ornament",
+      "description": "Needle-felted owl ornament for the Christmas tree.",
+      "price": 3.99,
+      "collection": 3,
+      "rating": 1,
+      "height": 2.5,
+      "width": 2.5,
+      "image": "owl_ornament.jpg"
+    }
+  },
+  {
+    "pk": 48,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007348",
+      "name": "Green elf",
+      "description": "Needle-felted Christmas elf made from fine merino wool, glass beads and pom-poms.",
+      "price": 5.99,
+      "collection": 3,
+      "rating": 1,
+      "height": 5,
+      "width": 2,
+      "image": "elf_ornament.jpg"
+    }
+  },
+  {
+    "pk": 49,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007349",
+      "name": "Emperor penguin",
+      "description": "Needle-felted emperor penguin made from fine merino wool as a Christmas tree ornament.",
+      "price": 4.99,
+      "collection": 3,
+      "rating": 1,
+      "height": 5,
+      "width": 2,
+      "image": "emperor_penguin.jpg"
+    }
+  },
+  {
+    "pk": 50,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007350",
+      "name": "Penguin ornament",
+      "description": "Needle-felted penguin made from fine merino wool as a Christmas tree ornament.",
+      "price": 3.99,
+      "collection": 3,
+      "rating": 1,
+      "height": 4,
+      "width": 1.5,
+      "image": "penguin_ornament.jpg"
+    }
+  },
+  {
+    "pk": 51,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007351",
+      "name": "Owl ornament",
+      "description": "Needle-felted owl made from fine merino wool as a Christmas tree ornament.",
+      "price": 3.99,
+      "collection": 3,
+      "rating": 1,
+      "height": 4,
+      "width": 1.5,
+      "image": "christmas_tree_ornament.jpg"
+    }
+  },
+  {
+    "pk": 52,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007352",
+      "name": "Owl ornament",
+      "description": "Needle-felted owl made from fine merino wool as a Christmas tree ornament.",
+      "price": 3.99,
+      "collection": 3,
+      "rating": 1,
+      "height": 4,
+      "width": 1.5,
+      "image": "felted_owl_christmas.jpg"
+    }
+  },
+  {
+    "pk": 53,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007353",
+      "name": "Blue elf",
+      "description": "Needle-felted Christmas blue elf made from fine merino wool, glass beads and pom-poms..",
+      "price": 3.99,
+      "collection": 3,
+      "rating": 1,
+      "height": 5,
+      "width": 2,
+      "image": "elf_christmas_ornament.jpg"
+    }
+  },
+  {
+    "pk": 54,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007354",
+      "name": "Star formation",
+      "description": "Star formation of needle-felted Christmas brooches made from fine merino wool.",
+      "price": 19.99,
+      "collection": 3,
+      "rating": 1,
+      "height": 15,
+      "width": 15,
+      "image": "christmas_brooches_ornaments.jpg"
+    }
+  },
+  {
+    "pk": 55,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007355",
+      "name": "Macaroni penguin",
+      "description": "Needle-felted penguin with macaroni hat made from fine merino wool as a Christmas tree ornament.",
+      "price": 5.99,
+      "collection": 3,
+      "rating": 1,
+      "height": 5,
+      "width": 2,
+      "image": "macaroni_penguin.jpg"
+    }
+  },
+  {
+    "pk": 56,
+    "model": "products.product",
+    "fields": {
+      "sku": "dw4007356",
+      "name": "Wool canes",
+      "description": "Get ready to decorate the Christmas tree with some wet-felted candy-like canes!",
+      "price": 3.99,
+      "collection": 3,
+      "rating": 1,
+      "height": 6,
+      "width": 1,
+      "image": "wool_canes.jpg"
+    }
+  }
+]
