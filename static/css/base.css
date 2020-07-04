@@ -46,6 +46,9 @@ body {
     width: 2.5rem;
 }
 
+.fa-star {
+   color: #FFBA00;
+}
 .btn-purple {
     background: #1d1141;
     color: white;
