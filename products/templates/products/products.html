@@ -12,6 +12,8 @@
 {% endblock %}
 
 {% block content %}
+    <!--All products view. Each products consists in a card 
+        that contains image and info like name,price, rating-->
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center text-uppercase">
@@ -59,6 +61,31 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!--Adding horizontal width rule between rows with products
+                        for every screen size depending on the number of products on a row.
+                        Used Django template technique with help from Code Institute video lesson-->
+                        {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                            <div class="col-12 d-none d-xl-block mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        <!--End horizontal rule-->
                     {% endfor %}
                 </div>
             </div>
