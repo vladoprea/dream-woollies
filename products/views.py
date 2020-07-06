@@ -10,7 +10,6 @@ def all_products(request):
     """
     
     products_list = Product.objects.all()
-    paginator = Paginator(products_list, 12)
     query = None
 
     if request.GET:
@@ -22,6 +21,8 @@ def all_products(request):
             
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products_list = products_list.filter(queries)
+    
+    paginator = Paginator(products_list, 12)
 
     page_number = request.GET.get('page')
     products = paginator.get_page(page_number)
