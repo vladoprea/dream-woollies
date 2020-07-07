@@ -12,12 +12,15 @@ def all_products(request):
     products_list = Product.objects.all().order_by('id')
     query = None
     collections = None
+    collection_page = None
 
     if request.GET:
         if 'collection' in request.GET:
             collections = request.GET['collection'].split(',')
             products_list = products_list.filter(collection__name__in=collections)
             collections = Collection.objects.filter(name__in=collections)
+            collection_page = request.GET['collection']
+            
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -32,10 +35,11 @@ def all_products(request):
 
     page_number = request.GET.get('page')
     products = paginator.get_page(page_number)
-    
+
     context = {
         'products': products,
         'current_collections': collections,
+        'collection_page': collection_page,
         'search_term': query,
     }
 
