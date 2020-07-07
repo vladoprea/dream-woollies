@@ -2,17 +2,23 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.core.paginator import Paginator
-from .models import Product
+from .models import Product, Collection
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries.
         Pagination included for more than 12 products on page
     """
     
-    products_list = Product.objects.all()
+    products_list = Product.objects.all().order_by('id')
     query = None
+    collections = None
 
     if request.GET:
+        if 'collection' in request.GET:
+            collections = request.GET['collection'].split(',')
+            products_list = products_list.filter(collection__name__in=collections)
+            collections = Collection.objects.filter(name__in=collections)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -29,6 +35,7 @@ def all_products(request):
     
     context = {
         'products': products,
+        'current_collections': collections,
         'search_term': query,
     }
 
