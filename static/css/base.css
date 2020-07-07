@@ -95,6 +95,16 @@ body {
     background-color: #f9ff7885;
     z-index: -1;
 }
+
+/*   Pagination nav styling     */
+.page-item.active .page-link {
+    background: #1d1141;
+    color: white;
+}
+
+.page-link a{
+    color: #1d1141; 
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
