@@ -9,13 +9,13 @@ def all_products(request):
         Pagination included for more than 12 products on page
     """
     
-    products_list = Product.objects.all().order_by('id')
+    products_list = Product.objects.all()
     query = None
     collections = None
     collection_page = None
     sort = None
     direction = None
-
+   
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -57,6 +57,8 @@ def all_products(request):
         'collection_page': collection_page,
         'search_term': query,
         'current_sorting': current_sorting,
+        'sort': sort,
+        'direction': direction,
     }
 
     return render(request, 'products/products.html', context)
