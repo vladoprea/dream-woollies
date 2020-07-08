@@ -13,14 +13,28 @@ def all_products(request):
     query = None
     collections = None
     collection_page = None
+    sort = None
+    direction = None
 
     if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products_list = products_list.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products_list = products_list.order_by(sortkey)
+
         if 'collection' in request.GET:
             collections = request.GET['collection'].split(',')
             products_list = products_list.filter(collection__name__in=collections)
             collections = Collection.objects.filter(name__in=collections)
             collection_page = request.GET['collection']
-            
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -31,8 +45,9 @@ def all_products(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products_list = products_list.filter(queries)
     
+    current_sorting = f'{sort}_{direction}'
+    
     paginator = Paginator(products_list, 12)
-
     page_number = request.GET.get('page')
     products = paginator.get_page(page_number)
 
@@ -41,6 +56,7 @@ def all_products(request):
         'current_collections': collections,
         'collection_page': collection_page,
         'search_term': query,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'products/products.html', context)
