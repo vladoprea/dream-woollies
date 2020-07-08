@@ -105,6 +105,20 @@ body {
 .page-link a{
     color: #1d1141; 
 }
+
+/*  Back to top button  */
+.btt-button {
+    height: 35px;
+    width: 35px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link {
+    cursor: pointer;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

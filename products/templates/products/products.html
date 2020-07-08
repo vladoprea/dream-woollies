@@ -23,9 +23,11 @@
         </div>
         <div class="row">
             <div class="col-10 offset-1">
+                <!--Sorting box options, with number of results and search query displayed.
+                Django template and JS for functionality-->
                 <div class="row mt-1 mt-2">
                     <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
-                        <div class="sort-select-wrapper w-50">
+                        <div class="w-50">
                             <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
@@ -34,8 +36,6 @@
                                 <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
                                 <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
                                 <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                                <option value="category_asc" {% if current_sorting == 'collection_asc' %}selected{% endif %}>Category (A-Z)</option>
-                                <option value="category_desc" {% if current_sorting == 'collection_desc' %}selected{% endif %}>Category (Z-A)</option>
                             </select>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                         <!--End horizontal rule-->
                     {% endfor %}
                 </div>
-                <!--Pagination for all products and also for products after collections filtering. 
+                <!--Pagination for all products, filtered, sorted or searched products. 
                     This is done with an if statement inside the url-->
                 <nav class="mt-3" aria-label="Page navigation">
                     <ul class='pagination pagination-sm justify-content-center'>
@@ -158,4 +158,45 @@
             </div>
         </div>
     </div>
+    <!--Back to top button-->
+    <div class="btt-button shadow-sm rounded-0 border border-black">
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up text-purple mx-auto my-auto"></i>
+        </a>	
+    </div>
+{% endblock %}
+
+<!--JS for sort box functionality. JS for back to top button
+    Code taken from Code Institute video lessons: Project - Boutique Ado-> Product Sorting->  Sorting Products Part 3-->
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+    </script>
+    
+    <script type="text/javascript">
+        $('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+            var selectedVal = selector.val();
+            if(selectedVal != "reset"){
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delte("dimension");
+
+                window.location.replace(currentUrl);
+            }
+        })
+</script>
 {% endblock %}
