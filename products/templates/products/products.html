@@ -122,9 +122,11 @@
                                 <span class="page-link">  
                                     <a href="?page=1 {% if collection_page %}&collection={{ collection_page }}
                                                      {% elif sort %}&sort={{ sort }}&direction={{ direction}}
+                                                     {% elif query_page %}&q={{ query_page }}
                                                      {% endif %}" class="mr-2">First</a>
                                     <a href="?page={{ products.previous_page_number }} {% if collection_page %}&collection={{ collection_page }}
                                                                                        {% elif sort %}&sort={{ sort }}&direction={{ direction}}
+                                                                                       {% elif query_page %}&q={{ query_page }}
                                                                                        {% endif %}">&laquo; &laquo;</a>
                                 </span> 
                             </li>
@@ -145,7 +147,7 @@
                                                                                     {% endif %}">&raquo; &raquo;</a>
                                      <a class="ml-2" href="?page={{ products.paginator.num_pages }} {% if collection_page %}&collection={{ collection_page }}
                                                                                                     {% elif sort %}&sort={{ sort }}&direction={{ direction}}
-                                                                                                    
+                                                                                                    {% elif query_page %}&q={{ query_page }}
                                                                                                     {% endif %}">Last</a>
                                 </span>
                             </li>

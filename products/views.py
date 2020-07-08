@@ -15,6 +15,7 @@ def all_products(request):
     collection_page = None
     sort = None
     direction = None
+    query_page = None
    
     if request.GET:
         if 'sort' in request.GET:
@@ -41,6 +42,7 @@ def all_products(request):
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
+            query_page = request.GET['q']
             
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products_list = products_list.filter(queries)
@@ -56,6 +58,7 @@ def all_products(request):
         'current_collections': collections,
         'collection_page': collection_page,
         'search_term': query,
+        'query_page': query_page,
         'current_sorting': current_sorting,
         'sort': sort,
         'direction': direction,
