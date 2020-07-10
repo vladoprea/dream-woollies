@@ -44,6 +44,7 @@
                             <td class="py-3">
                                 <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                 <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                <p class="text-muted mt-2"><small><i class="fas fa-table"></i> {{ item.product.collection.friendly_name }}</small></p>
                             </td>
                             <td class="py-3">
                                 <p class="my-0">${{ item.product.price }}</p>
