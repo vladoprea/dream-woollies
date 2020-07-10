@@ -7,7 +7,6 @@ html {
 body {
     height: calc(100vh - 164px);
     font-family: 'Muli', sans-serif;
-    color: #000;
 }
 
 .homepage-bg {
@@ -49,11 +48,16 @@ body {
 .fa-star {
    color: #FFBA00;
 }
+
 .btn-purple {
     background: #1d1141;
-    color: white;
+    color: #fff;
 }
 
+.btn-blue {
+    background: #37cec9;
+    color: #fff;
+}
 .shop-now-button {
     background: rgb(255, 59, 59);
     color: white;

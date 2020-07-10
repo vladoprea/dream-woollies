@@ -47,7 +47,7 @@
                     <p class="mt-3">{{ product.description }}</p>
                     <p class="text-muted mb-0"><small>Dimensions(height/width): {{ product.height }} / {{ product.width }} cm</small></p>
                     <p class="text-muted"><small><i class="fas fa-table"></i> {{ product.collection.friendly_name }}</small></p>
-                    <form class="form" action="" method="POST">
+                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
                             <div class="col-12">
@@ -60,13 +60,13 @@
                             </div>
 
                             <div class="col-12">
-                                <a href="{% url 'products' %}" class="btn btn-purple mt-5">
+                                <a href="{% url 'products' %}" class="btn btn-blue mt-5 mr-3">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <input type="submit" class="btn btn-blue text-uppercase mt-5" value="Add to Bag">
+                                <input type="submit" class="btn btn-purple text-uppercase mt-5" value="Add to Bag">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
