@@ -47,6 +47,30 @@
                     <p class="mt-3">{{ product.description }}</p>
                     <p class="text-muted mb-0"><small>Dimensions(height/width): {{ product.height }} / {{ product.width }} cm</small></p>
                     <p class="text-muted"><small><i class="fas fa-table"></i> {{ product.collection.friendly_name }}</small></p>
+                    <form class="form" action="" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-12">
+                                <p class="mt-3"><strong>Quantity:</strong></p>
+                                <div class="form-group w-25">
+                                    <div class="input-group">
+                                        <input class="form-control" type="number" name="quantity" value="1" min="1" max="10" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <a href="{% url 'products' %}" class="btn btn-purple mt-5">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Keep Shopping</span>
+                                </a>
+                                <input type="submit" class="btn btn-blue text-uppercase mt-5" value="Add to Bag">
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
