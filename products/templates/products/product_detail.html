@@ -54,6 +54,7 @@
                         <div class="form-row">
                             <div class="col-12">
                                 <p class="mt-3"><strong>Quantity:</strong></p>
+                                <!--Quantity input with +/- buttons-->
                                 <div class="form-group w-50">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -77,6 +78,7 @@
                                             </button>
                                         </div>
                                     </div>
+                                    <!--End quantity input-->
                                 </div>
                             </div>
 
@@ -96,4 +98,9 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
