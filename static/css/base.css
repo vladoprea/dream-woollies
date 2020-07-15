@@ -189,3 +189,12 @@ body {
         min-height: 400px;
     }
 }
+
+@media (max-width: 410px) {
+    .nav-link {
+        padding: 0px;
+    }
+    .header-container {
+        padding-top: 132px;
+    }
+}
