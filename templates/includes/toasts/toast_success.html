@@ -29,10 +29,10 @@
                 {% endfor %}
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col text-center">
+                    <h4>Total: {{ total|floatformat:2 }}</h4>
                     {% if free_delivery_delta > 0 %}
-                        <p><strong>Total: {{ total|floatformat:2 }}</strong></p>
-                        <p class="mb-1 text-danger text-center">
+                        <p class="mb-1 text-danger">
                             Get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
                         </p>
                     {% endif %}

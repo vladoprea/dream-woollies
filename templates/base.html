@@ -132,11 +132,11 @@
     </header>
 
     {% if messages %}
+      {% for message in messages %}
         <div class="message-container">
-            {% for message in messages %}
-              {% include 'includes/toasts/toast_success.html' %}
-            {% endfor %}
+            {% include 'includes/toasts/toast_success.html' %}
         </div>
+      {% endfor %}
     {% endif %}
 
     {% block page_header %}
