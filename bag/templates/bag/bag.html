@@ -14,7 +14,9 @@
 
 {% block content%}
    <!--Table containing list of products from shopping bag.
-    Created following Code Institute video lesson: Project - Boutique Ado  Adding Products  Adding Products Part 2-->
+    Created inspired by Code Institute video lesson: Project - Boutique Ado  Adding Products  Adding Products Part 2
+    and adapted for the projects own purpose. Used Bootstrap display properties to show or hide different elements
+    on different screen sizes-->
    <div class="container mb-2">
        <div class="row">
            <div class="col text-center text-uppercase">
@@ -31,8 +33,8 @@
                             <tr>
                                 <th scope="col">Product</th>
                                 <th scope="col"></th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Qty</th>
+                                <th scope="col" class="d-none d-sm-table-cell">Price</th>
+                                <th scope="col" class="d-none d-sm-table-cell">Quantity</th>
                                 <th scope="col">Subtotal</th>
                             </tr>
                         </thead>
@@ -46,17 +48,30 @@
                                 <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                 <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                 <p class="text-muted mt-2"><small><i class="fas fa-table"></i> {{ item.product.collection.friendly_name }}</small></p>
+                                <!--Quantity input with update functionality displayed on small devices.-->
+                                <form class="form update-form d-sm-none w-50" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                    {% csrf_token %}
+                                    <div class="form-group w-75 mb-0">
+                                        <div class="input-group">
+                                            <input class="form-control form-control-sm qty_input" type="number"
+                                                name="quantity" value="{{ item.quantity }}" min="1" max="10"
+                                                data-item_id="{{ item.item_id }}"
+                                                id="id_qty_{{ item.item_id }}">
+                                        </div>
+                                    </div>
+                                </form>
+                                <a class="update-link text-info d-sm-none"><small>Update qty</small></a>
                             </td>
-                            <td class="py-3">
+                            <td class="py-3 d-none d-sm-table-cell">
                                 <p class="my-0">£{{ item.product.price }}</p>
                             </td>
-                            <!--Quantity input form with update quantity function-->
-                            <td class="py-3 w-25">
+                            <!--Quantity input form with update quantity function displayed on larger than small devices-->
+                            <td class="py-3 w-25 d-none d-sm-table-cell">
                                 <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                     {% csrf_token %}
-                                    <div class="form-group">
+                                    <div class="form-group w-75">
                                         <div class="input-group">
-                                            <div class="input-group-prepend">
+                                            <div class="input-group-prepend d-none d-md-block">
                                                 <button class="decrement-qty btn btn-sm btn-purple rounded-0" 
                                                     data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                     <span>
@@ -68,7 +83,7 @@
                                                 name="quantity" value="{{ item.quantity }}" min="1" max="10"
                                                 data-item_id="{{ item.item_id }}"
                                                 id="id_qty_{{ item.item_id }}">
-                                            <div class="input-group-append">
+                                            <div class="input-group-append d-none d-md-block">
                                                 <button class="increment-qty btn btn-sm btn-purple rounded-0"
                                                     data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                     <span>
@@ -78,15 +93,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <a class="update-link text-info"><small>Update</small></a>
                                 </form>
-                                <a class="update-link text-info"><small>Update</small></a>
-                                <a class="remove-item float-right text-danger" id="remove_{{ item.item_id }}"><small>Remove item</small></a>
+                                
                             </td>
                             <!--End quantity input form-->
                             <td class="py-3">
                                 <p class="my-0 mb-3">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                <a class="remove-item" id="remove_{{ item.item_id }}"><i class="fas fa-trash-alt mr-md-1"></i><small>Remove</small></a>
                             </td>
-                        </tr>        
+                        </tr>      
                         {% endfor %}
                         <tr>
                             <td colspan="5" class="pt-5 text-right">
@@ -102,13 +118,13 @@
                         </tr>
                         <tr>
                             <td colspan="5" class="text-right">
-                                <a href="{% url 'products' %}" class="btn btn-blue btn-lg mt-2">
+                                <a href="{% url 'products' %}" class="btn btn-blue">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <a href="" class="btn btn-purple btn-lg mt-2">
+                                <a href="" class="btn btn-purple btn-lg d-block d-sm-inline-block mt-2">
                                     <span class="text-uppercase">Secure Checkout</span>
                                     <span class="icon">
                                         <i class="fas fa-lock"></i>
