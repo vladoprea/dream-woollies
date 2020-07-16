@@ -24,6 +24,10 @@ body {
     min-height: 50px;
 }
 
+.hr-bag {
+    border-color: #afafaf;
+}
+
 /*--------Header and Navbar-------*/
 
 .main-nav-style {
@@ -40,6 +44,7 @@ body {
     width: 1.5rem;
 }
 
+/* Font Awesome icons custom style */
 .fab {
     height: 2.5rem;
     width: 2.5rem;
@@ -49,6 +54,7 @@ body {
    color: #FFBA00;
 }
 
+/*------Buttons custom style------*/
 .btn-purple {
     background: #1d1141;
     color: #fff;
@@ -71,6 +77,21 @@ body {
     color: white;
 }
 
+/*Back to top button*/
+.btt-button {
+    height: 35px;
+    width: 35px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 .navbar-light .navbar-nav .nav-link:hover {
     color: #1d1141 !important;
 }
@@ -90,6 +111,7 @@ body {
     background-color: #000;
 }
 
+/*  Background color only for home page   */
 .overlay {
     height: 100%;
     width: 100%;
@@ -110,21 +132,7 @@ body {
     color: #1d1141; 
 }
 
-/*  Back to top button  */
-.btt-button {
-    height: 35px;
-    width: 35px;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-}
-
-.btt-link,
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
-
+/*   Toast bootstrap positioning  */
 .message-container {
     position: fixed;
     top: 85px;
