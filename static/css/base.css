@@ -149,6 +149,36 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
+/* -----Stripe payments-----*/
+.StripeElement {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+  
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+  
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+  
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+
+#card-element {
+    height: 100px;
+}
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

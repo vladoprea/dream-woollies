@@ -20,28 +20,9 @@
          <hr class="w-50 my-4">
         </div>
     </div>
-    <!--Delivery details-->
     <div class="row">
-        <div class="col-12 col-sm-6">
-            <form action="{% url 'checkout' %}" methods="POST" id="payment-form">
-                {% csrf_token %}
-                <fieldset class="form-group">
-                    <legend class="mb-0">
-                        <h4 class="mb-0">Delivery details</h4>
-                    </legend>
-                    <p class="text-muted font-weight-light pb-2"><small>(fields marked with * are mandatory)</small></p>
-                    {{ order_form|crispy }}
-                </fieldset>
-            </form>
-            <div class="form-check form-check-inline float-right mr-0">
-                <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
-                <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
-            </div>
-        </div>
-         <!--End delivery details-->
-
-         <!--Order summary available on larger than small devices-->
-        <div class="col-12 col-sm-6 d-none d-sm-block">
+        <!--Order summary available on larger than small devices-->
+        <div class="col-12 col-sm-6 order-last d-none d-sm-block">
             <h5 class="ml-4">Order Summary ({{ product_count }} items):</h5>
            <div class="table-responsive rounded ml-4">
               <table class="table table-sm table-borderless">
@@ -80,7 +61,44 @@
               </table>
            </div>
         </div>
+        <!--End order summary-->
+
+        <!--Delivery details-->
+        <div class="col-12 col-sm-6 order-first">
+            <form action="{% url 'checkout' %}" methods="POST" id="payment-form">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="mb-0">
+                        <h4 class="mb-0">Delivery details</h4>
+                    </legend>
+                    <p class="text-muted font-weight-light pb-2"><small>(fields marked with * are mandatory)</small></p>
+                    {{ order_form|crispy }}
+                    <div class="form-check form-check-inline float-right mr-0">
+                        <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
+                        <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+                    </div>
+                </fieldset>
+                <fieldset class="px-3">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                    <!-- A Stripe card element will go here -->
+                    <div class="mb-3" id="card-element"></div>
+
+                    <!-- Used to display form errors -->
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                </fieldset>
+            </form>
+        </div>
+         <!--End delivery details-->
+
+        
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'js/stripe_elements.js' %}"></script>
 {% endblock %}
 
