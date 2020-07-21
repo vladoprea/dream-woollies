@@ -173,11 +173,8 @@ body {
   
 .StripeElement--webkit-autofill {
     background-color: #fefde5 !important;
+}
 
-#card-element {
-    height: 100px;
-}
-}
 
 /* -------------------------------- Media Queries */
 
