@@ -22,10 +22,10 @@
     </div>
     <div class="row">
         <div class="col text-center">
-            <p>Your payment for <strong>£{{ grand_total|floatformat:2 }}</strong>was successful.
+            <p>Your payment for <strong>£{{ order.grand_total|floatformat:2 }}</strong> was successful.
                 A confirmation email will be sent to <strong>{{ order.email }}</strong>.
             </p>
-            <a href="{% url 'products' %}" class="btn btn-blue">
+            <a href="{% url 'products' %}" class="btn btn-blue mt-4">
                 <span class='icon'>
                     <i class="fas fa-chevron-left"></i>
                 </span>

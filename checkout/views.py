@@ -12,7 +12,7 @@ import stripe
 def checkout(request):
     """
     Returns view_bag if bag is empty. Returns checkout template and order form.
-    Creates stripe payment intent
+    Creates stripe payment intent. Create order in admin checkout.
     """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
