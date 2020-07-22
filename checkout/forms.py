@@ -8,4 +8,5 @@ class OrderForm(forms.ModelForm):
         # Exclude all fields that are added or calculated automatically
         exclude = ['order_number', 'date', 
                    'delivery_cost', 'order_total', 
-                   'grand_total']
+                   'grand_total','original_bag',
+                    'stripe_pid']
