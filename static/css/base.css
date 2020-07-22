@@ -175,6 +175,13 @@ body {
     background-color: #fefde5 !important;
 }
 
+#card-element {
+    border: 1px solid #000;
+}
+
+.payment-custom {
+    background-color: #fbfbfb;
+}
 
 /* -------------------------------- Media Queries */
 
