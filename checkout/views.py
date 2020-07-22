@@ -1,4 +1,5 @@
-from django.shortcuts import render, reverse, redirect, get_object_or_404
+from django.shortcuts import render, reverse, redirect, get_object_or_404, HttpResponse
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
@@ -8,6 +9,27 @@ from products.models import Product
 from bag.contexts import bag_contents
 
 import stripe
+import json
+
+@require_POST
+def cache_checkout_data(request):
+    """
+    Determines in the webhook if the user has the save-info box checked.
+    """
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'bag': json.dumps(request.session.get('bag', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be processed right now,\
+                    please try again later.')
+        return HttpResponse(content=e, status=400)
+
 
 def checkout(request):
     """
@@ -51,7 +73,7 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
 
-            request.session['save_info'] = 'save-info' in request.POST
+            request.session['save_info'] = 'save_info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There is an error in your form.\
