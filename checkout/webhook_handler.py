@@ -5,6 +5,7 @@ from django.http import HttpResponse
 
 from .models import Order, OrderLineItem
 from products.models import Product
+from profiles.models import UserProfile
 
 import json
 import time
@@ -39,6 +40,19 @@ class StripeWH_Handler:
         for field, value in billing_details.address.items():
             if value == "":
                 billing_details.address[field] = None 
+        
+        # Update profile information is save_info was checked
+        username = intent.metadata.username
+        profile = UserProfile.objects.get(user__username=username)
+        if save_info:
+            profile.full_name=billing_details.name
+            profile.email=billing_details.email
+            profile.phone_number=billing_details.phone
+            profile.country=billing_details.address.country
+            profile.town_or_city=billing_details.address.city
+            profile.street_address=billing_details.address.line1
+            profile.address_addition=billing_details.address.line2,
+            profile.county=billing_details.address.state
 
         order_exists = False
         attempt = 1

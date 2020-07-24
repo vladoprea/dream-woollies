@@ -1,5 +1,6 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.conf import settings
 
@@ -32,7 +33,7 @@ def cache_checkout_data(request):
                     please try again later.')
         return HttpResponse(content=e, status=400)
 
-
+@login_required
 def checkout(request):
     """
     Returns view_bag if bag is empty. Returns checkout template and order form.
@@ -139,22 +140,23 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    
-    if request.user.is_authenticated:
-        profile = UserProfile.objects.get(user=request.user)
-        #Attach the user's profile to the order
-        order.user_profile = profile
-        order.save()
+
+    profile = UserProfile.objects.get(user=request.user)
+    # Attach the user's profile to the order
+    order.user_profile = profile
+    order.save()
 
     # Save the user's info
     if save_info:
         profile_data = {
+            'full_name': order.full_name,
+            'email': order.email,
             'phone_number': order.phone_number,
             'country': order.country,
             'postcode': order.postcode,
             'town_or_city': order.town_or_city,
             'street_address': order.street_address,
-            'adress_addition': order.adress_addition,
+            'adress_addition': order.address_addition,
             'county': order.county,
         }
         user_profile_form = UserProfileForm(profile_data, instance=profile)
