@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-sm-6">
             <h4>Your delivery informations</h4>
             <form class="mt-4 form-group" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
@@ -29,9 +29,39 @@
                 <button id="submit-button" class="btn btn-purple">Update</button>
             </form>
         </div>
-        <div class="col-12 col-md-6">
-            <h4>Order history</h4>
-            {{ orders }}
+        <div class="col-12 col-sm-6 order-last d-none d-sm-block">
+            <h5 class="ml-4">Order History ({{ product_count }} items):</h5>
+           <div class="table-responsive rounded ml-4">
+              <table class="table table-sm table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">Order No.</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <td colspan="4"><hr class="hr-bag"></td>
+                {% for order in orders %}
+                <tr>
+                    <td><p class="my-0"><strong>{{ order.order_number }}</strong></p></td>
+                    <td>
+                        <ul class="list-unstyled">
+                            {% for item in order.orderitems.all %}
+                                <li>
+                                    {{ item.product.name }} x {{ item.quantity }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td><p class="my-0 mb-3">£{{ order.grand_total }}</p></td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="4"><hr class="hr-bag"></td>
+                </tr> 
+              </table>
+           </div>
         </div>
     </div>
 </div>
