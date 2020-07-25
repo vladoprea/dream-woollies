@@ -28,6 +28,17 @@ body {
     border-color: #afafaf;
 }
 
+/*  Background color only for home page   */
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #def5ff4d;
+    z-index: -1;
+}
+
 /*--------Header and Navbar-------*/
 
 .main-nav-style {
@@ -109,17 +120,6 @@ body {
 }
 .bg-black {
     background-color: #000;
-}
-
-/*  Background color only for home page   */
-.overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background-color: #f9ff7885;
-    z-index: -1;
 }
 
 /*   Pagination nav styling     */
@@ -240,16 +240,22 @@ body {
     }
 
     .header-container {
-        padding-top: 174px;
+        padding-top: 172px;
     }
     .homepage-title {
         min-height: 70px;
     }
 }
 
+@media (max-width: 410px) {
+    .nav-link {
+        padding: 0px;
+    }
+}
+
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 116px;
+        padding-top: 88px;
     }
 }
 
@@ -268,11 +274,3 @@ body {
     }
 }
 
-@media (max-width: 410px) {
-    .nav-link {
-        padding: 0px;
-    }
-    .header-container {
-        padding-top: 132px;
-    }
-}
