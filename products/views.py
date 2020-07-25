@@ -41,7 +41,8 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(request, "You didn't enter any search criteria!\
+                                        You were automatically redirected to All Products page.")
                 return redirect(reverse('products'))
             query_page = request.GET['q']
             
