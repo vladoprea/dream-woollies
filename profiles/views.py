@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile
 from .forms import UserProfileForm
 
+@login_required
 def profile(request):
     """Display user profile
     """
@@ -14,7 +16,10 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Delivery informations updated successfully')
-    form = UserProfileForm(instance=profile)
+        else:
+            messages.error(request, 'Update failed. Please ensure that the form is valid.')
+    else:
+        form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
     template = 'profiles/profile.html'
