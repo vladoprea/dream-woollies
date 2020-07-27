@@ -26,7 +26,7 @@ def profile(request):
     context = {
         'form': form,
         'orders': orders,
-        'on_profile_page': True,
+        'on_profile_page': True, # Helps for not showing the bag on update success message
     }
     
 

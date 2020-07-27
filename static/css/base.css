@@ -5,8 +5,9 @@ html {
 }
 
 body {
-    height: calc(100vh - 164px);
     font-family: 'Muli', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 .homepage-bg {
@@ -218,6 +219,18 @@ body {
     overflow-y: auto;
 }
 
+/*-----Footer------*/
+.footer-custom {
+    background-color:#0b1a0f;
+    color: #fff;
+    min-height: 140px;
+}
+
+.fa-cc-amex,
+.fa-cc-visa,
+.fa-cc-mastercard { 
+    font-size: 2.2rem;
+}
 
 /* -------------------------------- Media Queries */
 
@@ -255,7 +268,7 @@ body {
 
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 88px;
+        padding-top: 114px;
     }
 }
 
