@@ -17,8 +17,11 @@ def all_products(request):
     sort = None
     direction = None
     query_page = None
+    on_sale = False
    
     if request.GET:
+        on_sale = products_list.filter(on_sale=True)
+
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -64,6 +67,7 @@ def all_products(request):
         'current_sorting': current_sorting,
         'sort': sort,
         'direction': direction,
+        'on_sale': on_sale,
     }
 
     return render(request, 'products/products.html', context)
