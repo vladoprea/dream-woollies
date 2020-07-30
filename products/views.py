@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponseRedirect
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.core.paginator import Paginator
-from .models import Product, Collection
+from .models import Product, Collection, Review
 from .forms import ReviewForm
 
 def all_products(request):
@@ -77,12 +77,26 @@ def product_detail(request, product_id):
     
     product = get_object_or_404(Product, pk=product_id)
     review_form = ReviewForm()
+    reviews = Review.objects.filter(product_id=product_id)
 
     context = {
         'product': product,
         'review_form': review_form,
+        'reviews': reviews,
     }
 
     return render(request, 'products/product_detail.html', context)
 
+def add_review(request, product_id):
+
+    if request.method == 'POST': 
+      review_form = ReviewForm(request.POST)
+      if review_form.is_valid():
+          review_form.save()
+          messages.success(request, "Your review has ben sent. Thank you for your interest.")
+          print('shit')
+          return redirect(reverse('product_detail'))
+
+    return redirect(reverse('product_detail'))
+        
     

@@ -24,6 +24,11 @@ class CollectionAdmin(admin.ModelAdmin):
 
 
 class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('product', 'user',
+                    'subject', 'review',
+                    'rate', 'created_at'
+                    )
+
     readonly_fields = ('subject', 'review')
 
 admin.site.register(Product, ProductAdmin)
