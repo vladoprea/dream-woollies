@@ -28,7 +28,7 @@
         <!--Contact form-->
         <div class="col-12 col-md-6">
             <h4 class="mb-4 text-uppercase">Message us</h4>
-            <form action="{% url 'contact' %}" method="POST">
+            <form action="{% url 'contact' %}" method="POST" class="form-group">
                 {% csrf_token %}
                 {{ contact_form|crispy }}
                 <button id="submit-button" class="btn btn-lg btn-purple">

@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.core.paginator import Paginator
 from .models import Product, Collection
+from .forms import ReviewForm
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries.
@@ -75,9 +76,11 @@ def product_detail(request, product_id):
     """ A view to show one product's details """
     
     product = get_object_or_404(Product, pk=product_id)
+    review_form = ReviewForm()
 
     context = {
         'product': product,
+        'review_form': review_form,
     }
 
     return render(request, 'products/product_detail.html', context)
