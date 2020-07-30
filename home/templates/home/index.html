@@ -50,4 +50,63 @@
         </div>
     </section>
 
+    <section class="container">
+        <div class="row on-sale rounded mt-5 pt-3">
+            <div class="col">
+                <div class="on-sale-bar rounded">
+                    <h5 class="float-left pl-3">ON SALE</h5>
+                    <a href="{% url 'products' %}?on_sale" class="float-right text-decoration-none text-white pr-3"><strong>View all</strong></a>
+                </div>
+                <div class="row mt-3">
+                {% for product in products_on_sale %}
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card h-100">
+                        {% if product.image %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        </a>
+                        {% endif %}
+                        <div class="card-body pb-0">
+                            {% if product.rating %}
+                                <small class="text-muted">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    {{ product.rating }} / 5
+                                </small>
+                            {% else %}
+                                <small class="text-muted">No Rating</small>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="mb-0">{{ product.name }}</p>
+                                    <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                                    <p class="text-muted"><small><i class="fas fa-table"></i> {{ product.collection.friendly_name }}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="collections-bar rounded">
+                    <h5 class="float-left pl-3">COLLECTIONS</h5>
+                    <a href="{% url 'products' %}?on_sale" class="float-right text-decoration-none text-white pr-3"><strong>View all</strong></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
 {% endblock %}

@@ -232,6 +232,22 @@ body {
     font-size: 2.2rem;
 }
 
+.on-sale-bar {
+    height:40px;
+    background-color: rgb(255, 59, 59);
+    color: #fff;
+}
+
+.on-sale {
+    background-color: #fff;
+}
+
+.collections-bar {
+    height: 40px;
+    background-color: #37cec9;
+    color: #fff;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
