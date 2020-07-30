@@ -17,11 +17,8 @@ def all_products(request):
     sort = None
     direction = None
     query_page = None
-    on_sale = None
-   
+    
     if request.GET:
-        on_sale = products_list.filter(on_sale=True)
-        print(on_sale)
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -51,14 +48,15 @@ def all_products(request):
             
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products_list = products_list.filter(queries)
-    
+
+        if 'on_sale' in request.GET:
+            products_list = products_list.filter(on_sale=True)
+        
     current_sorting = f'{sort}_{direction}'
-    
     paginator = Paginator(products_list, 12)
     page_number = request.GET.get('page')
     products = paginator.get_page(page_number)
 
-    print(on_sale)
     context = {
         'products': products,
         'current_collections': collections,
@@ -68,9 +66,8 @@ def all_products(request):
         'current_sorting': current_sorting,
         'sort': sort,
         'direction': direction,
-        
-    }
-    print(on_sale)
+        }
+
 
     return render(request, 'products/products.html', context)
 
