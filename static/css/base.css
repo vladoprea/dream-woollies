@@ -47,6 +47,23 @@ body {
     color: #000;
 }
 
+/*-------Homepage sections--------*/
+.on-sale-bar {
+    height:40px;
+    background-color: rgb(255, 59, 59);
+    color: #fff;
+}
+
+.on-sale {
+    background-color: #fff;
+}
+
+.collections-bar {
+    height: 40px;
+    background-color: #37cec9;
+    color: #fff;
+}
+
 /* From Bulma for icons */
 .icon {
     align-items: center;
@@ -77,7 +94,7 @@ body {
     color: #fff;
 }
 .shop-now-button {
-    background: rgb(255, 59, 59);
+    background: #1d1141;
     color: white;
     min-width: 160px;
 }
@@ -219,6 +236,12 @@ body {
     overflow-y: auto;
 }
 
+/*-----Reviews------*/
+.all-reviews {
+    max-height: 450px;
+    overflow-y: auto;
+}
+
 /*-----Footer------*/
 .footer-custom {
     background-color:#0b1a0f;
@@ -230,22 +253,6 @@ body {
 .fa-cc-visa,
 .fa-cc-mastercard { 
     font-size: 2.2rem;
-}
-
-.on-sale-bar {
-    height:40px;
-    background-color: rgb(255, 59, 59);
-    color: #fff;
-}
-
-.on-sale {
-    background-color: #fff;
-}
-
-.collections-bar {
-    height: 40px;
-    background-color: #37cec9;
-    color: #fff;
 }
 
 /* -------------------------------- Media Queries */

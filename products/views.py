@@ -89,14 +89,31 @@ def product_detail(request, product_id):
 
 def add_review(request, product_id):
 
-    if request.method == 'POST': 
-      review_form = ReviewForm(request.POST)
-      if review_form.is_valid():
-          review_form.save()
-          messages.success(request, "Your review has ben sent. Thank you for your interest.")
-          print('shit')
-          return redirect(reverse('product_detail'))
+    product = get_object_or_404(Product, pk=product_id)
 
-    return redirect(reverse('product_detail'))
+    if request.method == 'POST': 
+        review_form = ReviewForm(request.POST)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            if 'rate1' in request.POST:
+                review.rate = 1
+            if 'rate2' in request.POST:
+                review.rate = 2
+            if 'rate3' in request.POST:
+                review.rate = 3
+            if 'rate4' in request.POST:
+                review.rate = 4
+            if 'rate5' in request.POST:
+                review.rate = 5
+            review.save()
+            messages.success(request, "Your review has ben sent. Thank you for your interest.")
+            return redirect(reverse('product_detail', args=[product_id]))
+        else:
+            print('fail')
+            print(review_form.errors)
+
+    return redirect(reverse('product_detail', product_id))
         
     
