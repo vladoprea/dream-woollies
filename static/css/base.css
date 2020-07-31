@@ -54,10 +54,6 @@ body {
     color: #fff;
 }
 
-.on-sale {
-    background-color: #fff;
-}
-
 .collections-bar {
     height: 40px;
     background-color: #37cec9;
@@ -98,7 +94,9 @@ body {
     color: white;
     min-width: 160px;
 }
-
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
 .btn-purple:hover,
 .btn-purple:active,
 .btn-purple:focus {
@@ -241,6 +239,10 @@ body {
     max-height: 450px;
     overflow-y: auto;
 }
+
+.carousel-custom {
+    max-height: 450px;
+  } 
 
 /*-----Footer------*/
 .footer-custom {
