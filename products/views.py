@@ -77,7 +77,7 @@ def product_detail(request, product_id):
     
     product = get_object_or_404(Product, pk=product_id)
     review_form = ReviewForm()
-    reviews = Review.objects.filter(product_id=product_id)
+    reviews = Review.objects.filter(product_id=product_id).order_by('-created_at')
 
     context = {
         'product': product,
