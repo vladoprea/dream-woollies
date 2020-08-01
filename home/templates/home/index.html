@@ -59,7 +59,7 @@
                 </div>
                 <div class="row mt-3">
                 {% for product in products_on_sale %}
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
                     <div class="card h-100">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
@@ -99,40 +99,123 @@
                 </div>
             </div>
         </div>
-        <!--Carousel for collections with link to each collections. A link to all products in the section bar-->
+        <!--Cards with link to each collection page and one for all products.-->
         <div class="row mt-5">
             <div class="col">
-                <div class="collections-bar rounded my-auto">
+                <div class="collections-bar rounded">
                     <h5 class="float-left pl-3 mt-2">COLLECTIONS</h5>
                     <a href="{% url 'products' %}?on_sale" class="float-right text-decoration-none text-white pr-3 mt-2"><strong>View all</strong></a>
                 </div>
-                <div id="carouselExampleControls" class="carousel slide px-5 mx-3" data-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img class="d-block w-100 carousel-custom" src="media/felted_dinos.jpg" alt="First slide">
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100 carousel-custom" src="media/fox_brooch.jpg" alt="Second slide">
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100 carousel-custom" src="media/flowers.jpg" alt="Third slide">
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100 carousel-custom" src="media/santa.jpg" alt="Fourth slide">
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100 carousel-custom" src="media/yellow_poppy_deco.jpg" alt="Fifth slide">
-                      </div>
+                <div class="row mt-3">
+                    <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                        <a href="{% url 'products' %}?collection=toys">
+                            <div class="card h-100">
+                                <img class="card-img-top img-fluid" src="media/felted_dinos.jpg" alt="toys">
+                                <div class="card-body pb-0">
+                                </div>
+                                <div class="card-footer bg-white border-0 pt-0">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="collection-badge text-center">
+                                                <span class="p-3 mb-5 badge badge-home border border-purple text-purple"><h5 class="mb-0">Toys</h5></span>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </div>
+                    <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                        <a href="{% url 'products' %}?collection=felted_brooches">
+                            <div class="card h-100">
+                                <img class="card-img-top img-fluid" src="media/fox_brooch.jpg" alt="felted_brooches">
+                                <div class="card-body pb-0">
+                                </div>
+                                <div class="card-footer bg-white border-0 pt-0">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="collection-badge text-center">
+                                                <span class="p-3 mb-5 badge badge-home border border-purple text-purple"><h5 class="mb-0">Brooches</h5></span>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                        <a href="{% url 'products' %}?collection=wool_paintings">
+                            <div class="card h-100">
+                                <img class="card-img-top img-fluid" src="media/flowers.jpg" alt="wool_paintings">
+                                <div class="card-body pb-0">
+                                </div>
+                                <div class="card-footer bg-white border-0 pt-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="collection-badge text-center">
+                                                <span class="p-3 mb-5 badge badge-home border border-purple text-purple"><h5 class="mb-0">Wool Paintings</h5></span>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                        <a href="{% url 'products' %}?collection=christmas_deco">
+                            <div class="card h-100">
+                                <img class="card-img-top img-fluid" src="media/santa.jpg" alt="christmas">
+                                <div class="card-body pb-0">
+                                </div>
+                                <div class="card-footer bg-white border-0 pt-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="collection-badge text-center">
+                                                <span class="p-3 mb-5 badge badge-home border border-purple text-purple"><h5 class="mb-0">Christmas Deco</h5></span>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                        <a href="{% url 'products' %}?collection=home_deco">
+                            <div class="card h-100">
+                                <img class="card-img-top img-fluid" src="media/felted_dinos.jpg" alt="home_deco">
+                                <div class="card-body pb-0">
+                                </div>
+                                <div class="card-footer bg-white border-0 pt-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="collection-badge text-center">
+                                                <span class="p-3 mb-5 badge badge-home border border-purple text-purple"><h5 class="mb-0">Home Deco</h5></span>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                        <a href="{% url 'products' %}">
+                            <div class="card h-100">
+                                <img class="card-img-top img-fluid" src="/media/homepage.jpg" alt="all_products">
+                                <div class="card-body pb-0">
+                                </div>
+                                <div class="card-footer bg-white border-0 pt-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="collection-badge text-center">
+                                                <span class="p-3 mb-5 badge badge-home border border-purple text-purple"><h5 class="mb-0">All Products</h5></span>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
