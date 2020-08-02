@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Muli:wght@200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
 
 html {
     height: 100%;
 }
 
 body {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Mulish', sans-serif;
     display: flex;
     flex-direction: column;
 }
 
 .homepage-bg {
-    background-image: url('/media/homepage.jpg');
+    background-image: url('../media/homepage.jpg');
     background-size: cover; 
     background-position: center;
     min-height: 400px;
 }
 
 .homepage-title {
-    background-image: url('/media/homepage-title.png');
+    background-image: url('../media/homepage-title.png');
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: center;
@@ -80,7 +80,7 @@ body {
 }
 
 .fa-star {
-   color: #FFBA00;
+    color: #FFBA00;
 }
 
 /*------Buttons custom style------*/
@@ -187,15 +187,15 @@ body {
     -webkit-transition: box-shadow 150ms ease;
     transition: box-shadow 150ms ease;
 }
-  
+
 .StripeElement--focus {
     box-shadow: 0 1px 3px 0 #cfd7df;
 }
-  
+
 .StripeElement--invalid {
     border-color: #fa755a;
 }
-  
+
 .StripeElement--webkit-autofill {
     background-color: #fefde5 !important;
 }
@@ -267,9 +267,9 @@ body {
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
-      max-width: 80%;
+        max-width: 80%;
     }
-  }
+}
 
   /* fixed top navbar only on medium and up */
   /* homepage first section positioning and sizing */
@@ -310,7 +310,7 @@ body {
 
 @media (max-width: 767px) {
     .homepage-bg {
-        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/media/homepage.jpg');
+        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('../media/homepage.jpg');
         background-size: cover; 
         background-position: center;
         min-height: 400px;
