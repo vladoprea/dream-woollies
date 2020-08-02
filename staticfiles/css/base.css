@@ -11,14 +11,14 @@ body {
 }
 
 .homepage-bg {
-    background-image: url('{% static "media/homepage.jpg" %}');
+    background-image: url('..media/homepage.jpg');
     background-size: cover; 
     background-position: center;
     min-height: 400px;
 }
 
 .homepage-title {
-    background-image: url('{% static "media/homepage-title.png" %}');
+    background-image: url('..media.homepage-title.png');
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: center;
