@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@200,300,400,500,600,700,800,900&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage-bg {
+    background-image: url('/media/homepage.jpg');
+    background-size: cover; 
+    background-position: center;
+    min-height: 400px;
+}
+
+.homepage-title {
+    background-image: url('/media/homepage-title.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 50px;
+}
+
+.hr-bag {
+    border-color: #afafaf;
+}
+
+/*  Background color only for home page   */
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #def5ff4d;
+    z-index: -1;
+}
+
+/*--------Header and Navbar-------*/
+
+.main-nav-style {
+    background-color: #FFBA00;
+    color: #000;
+}
+
+/*-------Homepage sections--------*/
+.on-sale-bar {
+    height:40px;
+    background-color: rgb(255, 59, 59);
+    color: #fff;
+}
+
+.collections-bar {
+    height: 40px;
+    background-color: #37cec9;
+    color: #fff;
+}
+
+.badge-home {
+    min-width: 120px;
+}
+
+/* From Bulma for icons */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* Font Awesome icons custom style */
+.fab {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.fa-star {
+   color: #FFBA00;
+}
+
+/*------Buttons custom style------*/
+.btn-purple {
+    background: #1d1141;
+    color: #fff;
+}
+
+.btn-blue {
+    background: #37cec9;
+    color: #fff;
+}
+.shop-now-button {
+    background: #1d1141;
+    color: white;
+    min-width: 160px;
+}
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-purple:hover,
+.btn-purple:active,
+.btn-purple:focus {
+    background: #000;
+    color: white;
+}
+
+/*Back to top button*/
+.btt-button {
+    height: 35px;
+    width: 35px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #1d1141 !important;
+}
+
+.text-purple {
+    color: #1d1141 !important;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+.border-purple {
+    border: 2px solid #1d1141 !important;;
+}
+
+.bg-black {
+    background-color: #000;
+}
+
+/*   Pagination nav styling     */
+.page-item.active .page-link {
+    background: #1d1141;
+    color: white;
+}
+
+.page-link a{
+    color: #1d1141; 
+}
+
+/*   Toast bootstrap positioning  */
+.message-container {
+    position: fixed;
+    top: 85px;
+    right: 20px;
+    z-index: 99999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* -----Stripe payments-----*/
+.StripeElement {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+  
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+  
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+  
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+#card-element {
+    border: 1px solid #000;
+}
+
+.payment-custom {
+    background-color: #fbfbfb;
+}
+
+/* ---------Allauth overriding style--------*/
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+	/* btn  from boostrap with a few modifications */
+	display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #1d1141;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/*---Order History---*/
+.order-history {
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+/*-----Reviews------*/
+.all-reviews {
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+/*-----Footer------*/
+.footer-custom {
+    background-color:#0b1a0f;
+    color: #fff;
+    min-height: 140px;
+}
+
+.fa-cc-amex,
+.fa-cc-visa,
+.fa-cc-mastercard { 
+    font-size: 2.2rem;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
+
+  /* fixed top navbar only on medium and up */
+  /* homepage first section positioning and sizing */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 172px;
+    }
+    .homepage-title {
+        min-height: 70px;
+    }
+}
+
+@media (max-width: 410px) {
+    .nav-link {
+        padding: 0px;
+    }
+}
+
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 114px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .homepage-style {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .homepage-bg {
+        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/media/homepage.jpg');
+        background-size: cover; 
+        background-position: center;
+        min-height: 400px;
+    }
+}
+
