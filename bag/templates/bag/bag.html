@@ -38,105 +38,105 @@
                                 <th scope="col">Subtotal</th>
                             </tr>
                         </thead>
-
-                        {% for item in bag_items %}
-                        <tr>
-                            <td class="p-3 w-25">
-                                <img class="img-fluid rounded border" src="{{ item.product.image.url }}">
-                            </td>
-                            <td class="py-3">
-                                <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
-                                <p class="text-muted mt-2"><small><i class="fas fa-table"></i> {{ item.product.collection.friendly_name }}</small></p>
-                                <!--Quantity input with update functionality displayed on small devices.-->
-                                <form class="form update-form d-sm-none w-50" method="POST" action="{% url 'adjust_bag' item.item_id %}">
-                                    {% csrf_token %}
-                                    <div class="form-group w-75 mb-0">
-                                        <div class="input-group">
-                                            <input class="form-control form-control-sm qty_input" type="number"
-                                                name="quantity" value="{{ item.quantity }}" min="1" max="10"
-                                                data-item_id="{{ item.item_id }}"
-                                                id="id_qty_{{ item.item_id }}">
-                                        </div>
-                                    </div>
-                                </form>
-                                <a class="update-link text-info d-sm-none"><small>Update qty</small></a>
-                            </td>
-                            <td class="py-3 d-none d-sm-table-cell">
-                                <p class="my-0">£{{ item.product.price }}</p>
-                            </td>
-                            <!--Quantity input form with update quantity function displayed on larger than small devices-->
-                            <td class="py-3 w-25 d-none d-sm-table-cell">
-                                <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
-                                    {% csrf_token %}
-                                    <div class="form-group w-75">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend d-none d-md-block">
-                                                <button class="decrement-qty btn btn-sm btn-purple rounded-0" 
-                                                    data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                    <span>
-                                                        <i class="fas fa-minus fa-sm"></i>
-                                                    </span>
-                                                </button>
-                                            </div>
-                                            <input class="form-control form-control-sm qty_input" type="number"
-                                                name="quantity" value="{{ item.quantity }}" min="1" max="10"
-                                                data-item_id="{{ item.item_id }}"
-                                                id="id_qty_{{ item.item_id }}">
-                                            <div class="input-group-append d-none d-md-block">
-                                                <button class="increment-qty btn btn-sm btn-purple rounded-0"
-                                                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                                                    <span>
-                                                        <i class="fas fa-plus fa-sm"></i>
-                                                    </span>
-                                                </button>
+                        <tbody>
+                            {% for item in bag_items %}
+                            <tr>
+                                <td class="p-3 w-25">
+                                    <img class="img-fluid rounded border" src="{{ item.product.image.url }}">
+                                </td>
+                                <td class="py-3">
+                                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                    <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                    <p class="text-muted mt-2"><small><i class="fas fa-table"></i> {{ item.product.collection.friendly_name }}</small></p>
+                                    <!--Quantity input with update functionality displayed on small devices.-->
+                                    <form class="form update-form d-sm-none w-50" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                        {% csrf_token %}
+                                        <div class="form-group w-75 mb-0">
+                                            <div class="input-group">
+                                                <input class="form-control form-control-sm qty_input" type="number"
+                                                    name="quantity" value="{{ item.quantity }}" min="1" max="10"
+                                                    data-item_id="{{ item.item_id }}"
+                                                    id="id_qty_{{ item.item_id }}">
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
+                                    <a class="update-link text-info d-sm-none"><small>Update qty</small></a>
+                                </td>
+                                <td class="py-3 d-none d-sm-table-cell">
+                                    <p class="my-0">£{{ item.product.price }}</p>
+                                </td>
+                                <!--Quantity input form with update quantity function displayed on larger than small devices-->
+                                <td class="py-3 w-25 d-none d-sm-table-cell">
+                                    <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                        {% csrf_token %}
+                                        <div class="form-group w-75">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend d-none d-md-block">
+                                                    <button class="decrement-qty btn btn-sm btn-purple rounded-0" 
+                                                        data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                        <span>
+                                                            <i class="fas fa-minus fa-sm"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <input class="form-control form-control-sm qty_input" type="number"
+                                                    name="quantity" value="{{ item.quantity }}" min="1" max="10"
+                                                    data-item_id="{{ item.item_id }}"
+                                                    id="id_qty_{{ item.item_id }}">
+                                                <div class="input-group-append d-none d-md-block">
+                                                    <button class="increment-qty btn btn-sm btn-purple rounded-0"
+                                                        data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                        <span>
+                                                            <i class="fas fa-plus fa-sm"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                     <a class="update-link text-info"><small>Update</small></a>
-                                </form>
-                                
-                            </td>
-                            <!--End quantity input form-->
-                            <td class="py-3">
-                                <p class="my-0 mb-3">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
-                                <a class="remove-item" id="remove_{{ item.item_id }}"><i class="fas fa-trash-alt mr-md-1"></i><small>Remove</small></a>
-                            </td>
-                        </tr>  
-                        <!--Horizontal rule inspired from StackOverflow, question 17169094, answer by BeNdErR user--> 
-                        <tr>
-                            <td colspan="5"><hr class="hr-bag"></td>
-                        </tr>   
-                        <!--End hr rule-->
-                        {% endfor %}
-                        <tr>
-                            <td colspan="5" class="pt-5 text-right">
-                                <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-                                <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
-                                <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
-                                {% if free_delivery_delta > 0 %}
-                                    <p class="mb-1 text-danger">
-                                        You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
-                                    </p>
-                                {% endif %}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="5" class="text-right">
-                                <a href="{% url 'products' %}" class="btn btn-blue">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Keep Shopping</span>
-                                </a>
-                                <a href="{% url 'checkout' %}" class="btn btn-purple btn-lg d-block d-sm-inline-block mt-2">
-                                    <span class="text-uppercase">Secure Checkout</span>
-                                    <span class="icon">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
-                                </a>
-                            </td>
-                        </tr>
+                                </td>
+                                <!--End quantity input form-->
+                                <td class="py-3">
+                                    <p class="my-0 mb-3">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                    <a class="remove-item" id="remove_{{ item.item_id }}"><i class="fas fa-trash-alt mr-md-1"></i><small>Remove</small></a>
+                                </td>
+                            </tr>  
+                            <!--Horizontal rule inspired from StackOverflow, question 17169094, answer by BeNdErR user--> 
+                            <tr>
+                                <td colspan="5"><hr class="hr-bag"></td>
+                            </tr>   
+                            <!--End hr rule-->
+                            {% endfor %}
+                            <tr>
+                                <td colspan="5" class="pt-5 text-right">
+                                    <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+                                    <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                                    <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+                                    {% if free_delivery_delta > 0 %}
+                                        <p class="mb-1 text-danger">
+                                            You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
+                                        </p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-right">
+                                    <a href="{% url 'products' %}" class="btn btn-blue">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                    <a href="{% url 'checkout' %}" class="btn btn-purple btn-lg d-block d-sm-inline-block mt-2">
+                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             {% else %}
