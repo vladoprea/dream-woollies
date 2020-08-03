@@ -11,14 +11,14 @@ body {
 }
 
 .homepage-bg {
-    background-image: url('{% media "homepage.jpg" %}');
+   
     background-size: cover; 
     background-position: center;
     min-height: 400px;
 }
 
 .homepage-title {
-    background-image: url('{% media "homepage-title.jpg" %}');
+    
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: center;
@@ -310,7 +310,7 @@ body {
 
 @media (max-width: 767px) {
     .homepage-bg {
-        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('{% media "homepage.jpg" %}');
+        background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('');
         background-size: cover; 
         background-position: center;
         min-height: 400px;
