@@ -1,6 +1,8 @@
+import math
+
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponseRedirect
 from django.contrib import messages
-from django.db.models import Q
+from django.db.models import Q, Avg
 from django.db.models.functions import Lower
 from django.core.paginator import Paginator
 from .models import Product, Collection, Review
@@ -10,7 +12,7 @@ def all_products(request):
     """ A view to show all products, including sorting and search queries.
         Pagination included for more than 12 products on page
     """
-    
+
     products_list = Product.objects.all().order_by('id')
     query = None
     collections = None
@@ -18,7 +20,7 @@ def all_products(request):
     sort = None
     direction = None
     query_page = None
-    
+        
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -80,11 +82,14 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     review_form = ReviewForm()
     reviews = Review.objects.filter(product_id=product_id).order_by('-created_at')
+    average = Review.objects.filter(product_id=product_id).aggregate(Avg('rate')).get('rate__avg') or 1
+    average_rating = math.ceil(average)
 
     context = {
         'product': product,
         'review_form': review_form,
         'reviews': reviews,
+        'average_rating': average_rating,
     }
 
     return render(request, 'products/product_detail.html', context)
