@@ -50,7 +50,7 @@
                                 <span class="small"><a href="{% url 'home' %}">Home</a> | </span>
                                 <span class="small"><a href="{% url 'products' %}">All Products</a> | </span>
                             {% endif %}
-                            {{ products|length }} Products per page {% if search_term %}found for <strong>"{{ search_term }}"</strong>{% endif %}
+                            {{ total }} Products {% if search_term %}found for <strong>"{{ search_term }}"</strong>{% endif %}
                         </p>
                     </div>
                 </div>

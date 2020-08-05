@@ -54,6 +54,7 @@ def all_products(request):
             products_list = products_list.filter(on_sale=True)
         
     current_sorting = f'{sort}_{direction}'
+    total = len(products_list)
     paginator = Paginator(products_list, 12)
     page_number = request.GET.get('page')
     products = paginator.get_page(page_number)
@@ -67,6 +68,7 @@ def all_products(request):
         'current_sorting': current_sorting,
         'sort': sort,
         'direction': direction,
+        'total': total,
         }
 
 
