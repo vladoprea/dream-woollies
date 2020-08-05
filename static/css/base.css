@@ -182,6 +182,16 @@ body {
     height: 250px;
 }
 
+.img-bag {
+    width: 200px;
+    height: 200px;
+}
+
+.table td {
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
 /* -----Stripe payments-----*/
 .StripeElement {
     box-sizing: border-box;
@@ -313,6 +323,10 @@ body {
     .homepage-style {
         margin-top: 25px;
     }
+    .img-bag {
+        width: 200px;
+        height: 150px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -322,5 +336,19 @@ body {
         background-position: center;
         min-height: 400px;
     }
+    .img-bag {
+        width: 200px;
+        height: 120px;
+    }
+    .table td {
+        margin: 0 auto;
+        vertical-align: top;
+    }
 }
 
+@media (max-width: 451px) {
+    .img-bag {
+        width: 200px;
+        height: 50px;
+    }
+}
