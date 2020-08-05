@@ -1,33 +1,8 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item"><a href="{% url 'home' %}" class="font-weight-bold nav-link text-black mr-5">Home</a></li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Products
-            </a>
-            <div class="dropdown-menu main-nav-style border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'products' %}?sort=name&direction=asc" class="dropdown-item ">By Name</a>
-                <a href="{% url 'products' %}?on_sale" class="dropdown-item ">ON SALE</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Collections
-            </a>
-            <div class="dropdown-menu main-nav-style border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?collection=toys" class="dropdown-item">Toys</a>
-                <a href="{% url 'products' %}?collection=felted_brooches" class="dropdown-item ">Brooches</a>
-                <a href="{% url 'products' %}?collection=wool_paintings" class="dropdown-item ">Wool Paintings</a>
-                <a href="{% url 'products' %}?collection=christmas_deco" class="dropdown-item">Christmas Deco</a>
-                <a href="{% url 'products' %}?collection=home_deco" class="dropdown-item">Home Deco</a>
-            </div>
-        </li>
-
+        <li class="nav-item"><a href="{% url 'products' %}" class="font-weight-bold nav-link text-black mr-5">All Products</a></li>
+        <li class="nav-item"><a href="{% url 'products' %}?on_sale" class="font-weight-bold nav-link text-black mr-5">ON SALE</a></li>
         <li class="nav-item"><a href="{% url 'contact' %}" class="font-weight-bold nav-link text-black mr-5">Contact</a></li>
     </ul>
 </div>
