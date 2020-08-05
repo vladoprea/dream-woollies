@@ -108,21 +108,6 @@ body {
     color: white;
 }
 
-/*Back to top button*/
-.btt-button {
-    height: 35px;
-    width: 35px;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-}
-
-.btt-link,
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
-
 .navbar-light .navbar-nav .nav-link:hover {
     color: #1d1141 !important;
 }
@@ -145,6 +130,23 @@ body {
 
 .bg-black {
     background-color: #000;
+}
+
+/*Back to top button*/
+.btt-button {
+    background-color: #fff;
+    height: 35px;
+    width: 35px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
 }
 
 /*   Pagination nav styling     */
@@ -173,6 +175,11 @@ body {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+/*----Cards with images-----*/
+.img-custom {
+    height: 250px;
 }
 
 /* -----Stripe payments-----*/

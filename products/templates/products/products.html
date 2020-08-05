@@ -60,11 +60,11 @@
                             <div class="card h-100">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid img-custom" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid img-custom" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
@@ -84,7 +84,9 @@
                                 <div class="card-footer bg-white border-0 pt-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="mb-0">{{ product.name }}</p>
+                                            <a href="{% url 'product_detail' product.id %}" class="text-decoration-none text-black">
+                                                <p class="mb-0">{{ product.name }}</p>
+                                            </a>
                                             <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
                                             <p class="text-muted"><small><i class="fas fa-table"></i> {{ product.collection.friendly_name }}</small></p>
                                         </div>
@@ -97,22 +99,22 @@
                         for every screen size depending on the number of products on a row.
                         Used Django template technique with help from Code Institute video lesson-->
                         {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
+                            <div class="col-12 d-sm-none my-4">
                                 <hr>
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none my-4">
                                 <hr>
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                            <div class="col-12 d-none d-lg-block d-xl-none my-4">
                                 <hr>
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
+                            <div class="col-12 d-none d-xl-block my-4">
                                 <hr>
                             </div>
                         {% endif %}
@@ -121,7 +123,7 @@
                 </div>
                 <!--Pagination for all products, filtered, sorted or searched products. 
                     This is done with an if statement inside the url-->
-                <nav class="mt-3" aria-label="Page navigation">
+                <nav class="mt-4" aria-label="Page navigation">
                     <ul class='pagination pagination-sm justify-content-center'>
                         {% if products.has_previous %}
                             <li class="page-item">  
@@ -129,11 +131,11 @@
                                     <a href="?page=1 {% if collection_page %}&collection={{ collection_page }}
                                                      {% elif sort %}&sort={{ sort }}&direction={{ direction}}
                                                      {% elif query_page %}&q={{ query_page }}
-                                                     {% endif %}" class="mr-2">First</a>
+                                                     {% endif %}" class="mr-3">First</a>
                                     <a href="?page={{ products.previous_page_number }} {% if collection_page %}&collection={{ collection_page }}
                                                                                        {% elif sort %}&sort={{ sort }}&direction={{ direction}}
                                                                                        {% elif query_page %}&q={{ query_page }}
-                                                                                       {% endif %}">&laquo; &laquo;</a>
+                                                                                       {% endif %}">Previous</a>
                                 </span> 
                             </li>
                         {% endif %}
@@ -150,11 +152,11 @@
                                      <a href="?page={{ products.next_page_number }} {% if collection_page %}&collection={{ collection_page }}
                                                                                     {% elif sort %}&sort={{ sort }}&direction={{ direction}}
                                                                                     {% elif query_page %}&q={{ query_page }}
-                                                                                    {% endif %}">&raquo; &raquo;</a>
-                                     <a class="ml-2" href="?page={{ products.paginator.num_pages }} {% if collection_page %}&collection={{ collection_page }}
+                                                                                    {% endif %}">Next</a>
+                                     <a href="?page={{ products.paginator.num_pages }} {% if collection_page %}&collection={{ collection_page }}
                                                                                                     {% elif sort %}&sort={{ sort }}&direction={{ direction}}
                                                                                                     {% elif query_page %}&q={{ query_page }}
-                                                                                                    {% endif %}">Last</a>
+                                                                                                    {% endif %}" class="ml-3">Last</a>
                                 </span>
                             </li>
                         {% endif %}
