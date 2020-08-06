@@ -9,4 +9,7 @@ class ReviewForm(forms.ModelForm):
         widgets = {
             'review': Textarea(attrs={'cols': 7, 'rows': 7}),
         }
-        fields = ['subject', 'review']
+        fields = ['subject', 'review', 'rate']
+        labels ={
+            'rate': 'Choose your rating'
+        }

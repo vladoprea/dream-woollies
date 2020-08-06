@@ -82,15 +82,14 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     review_form = ReviewForm()
     reviews = Review.objects.filter(product_id=product_id).order_by('-created_at')
-    average = Review.objects.filter(product_id=product_id).aggregate(Avg('rate')).get('rate__avg') or 1 
-    average_rating = math.ceil(average)
+    average_rating = Review.objects.aggregate(Avg('rate')).get('rate__avg') or 1
 
     context = {
         'product': product,
         'review_form': review_form,
         'reviews': reviews,
+        'on_profile_page': True,
         'average_rating': average_rating,
-        'on_profile_page': True
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -105,23 +104,12 @@ def add_review(request, product_id):
             review = review_form.save(commit=False)
             review.product = product
             review.user = request.user
-            if 'rate1' in request.POST:
-                review.rate = 1
-            if 'rate2' in request.POST:
-                review.rate = 2
-            if 'rate3' in request.POST:
-                review.rate = 3
-            if 'rate4' in request.POST:
-                review.rate = 4
-            if 'rate5' in request.POST:
-                review.rate = 5
             review.save()
             messages.success(request, "Your review has ben sent. Thank you for your interest.")
             return redirect(reverse('product_detail', args=[product_id]))
         else:
             print('fail')
             print(review_form.errors)
-
     return redirect(reverse('product_detail', product_id))
         
     
