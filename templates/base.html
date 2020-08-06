@@ -136,7 +136,8 @@
         </nav>
     </div>
     </header>
-
+    <!--Main content-->
+    <main>
     {% if messages %}
       {% for message in messages %}
         <div class="message-container">
@@ -156,7 +157,8 @@
     
     {% block content %}
     {% endblock %}
-
+    </main>
+    <!--Footer-->
     {% include 'includes/footer.html' %}
     
     {% block postloadjs %}
