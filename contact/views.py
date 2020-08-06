@@ -18,6 +18,7 @@ def contact_form(request):
 
     context = {
         'contact_form': contact_form,
+        'on_profile_page': True
     }
 
     return render(request, template, context)

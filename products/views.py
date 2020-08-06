@@ -78,11 +78,11 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show one product's details """
-    
+   
     product = get_object_or_404(Product, pk=product_id)
     review_form = ReviewForm()
     reviews = Review.objects.filter(product_id=product_id).order_by('-created_at')
-    average = Review.objects.filter(product_id=product_id).aggregate(Avg('rate')).get('rate__avg') or 1
+    average = Review.objects.filter(product_id=product_id).aggregate(Avg('rate')).get('rate__avg') or 1 
     average_rating = math.ceil(average)
 
     context = {
@@ -90,6 +90,7 @@ def product_detail(request, product_id):
         'review_form': review_form,
         'reviews': reviews,
         'average_rating': average_rating,
+        'on_profile_page': True
     }
 
     return render(request, 'products/product_detail.html', context)
