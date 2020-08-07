@@ -87,14 +87,16 @@ def product_detail(request, product_id):
         'product': product,
         'review_form': review_form,
         'reviews': reviews,
-        'on_profile_page': True,
     }
 
     return render(request, 'products/product_detail.html', context)
 
 
 def add_review(request, product_id):
-
+    """
+    Handles the POST request for review form. Saves the form and redirects
+    to the product selected page
+    """
     product = get_object_or_404(Product, pk=product_id)
 
     if request.method == 'POST': 
@@ -104,10 +106,9 @@ def add_review(request, product_id):
             review.product = product
             review.user = request.user
             review.save()
-            messages.success(request, "Your review has ben sent. Thank you for your interest.")
+            messages.info(request, "Your review has been received! Thank you for your interest.")
             return redirect(reverse('product_detail', args=[product_id]))
         else:
-            print('fail')
             print(review_form.errors)
             
     return redirect(reverse('product_detail', args=[product_id]))
