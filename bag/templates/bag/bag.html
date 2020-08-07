@@ -60,7 +60,12 @@
                                     <a class="update-link text-info d-sm-none"><small>Update qty</small></a>
                                 </td>
                                 <td class="py-3 d-none d-sm-table-cell">
-                                    <p class="my-0">£{{ item.product.price }}</p>
+                                    {% if item.product.on_sale == True %}
+                                        <p class="my-0 text-red"><strong>£{{ item.product.discount_price }}</strong></p>
+                                        <p class="mb-4"><strike>£{{ item.product.price }}</strike></p> 
+                                    {% else %}
+                                        <p class="mb-4">£{{ item.product.price }}</p>
+                                    {% endif %}
                                 </td>
                                 <!--Quantity input form with update quantity function displayed on larger than small devices-->
                                 <td class="py-3 w-25 d-none d-sm-table-cell">

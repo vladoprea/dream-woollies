@@ -30,7 +30,7 @@
             </div>
             <div class="row">
                 <div class="col text-center">
-                    <h4>Total: {{ total|floatformat:2 }}</h4>
+                    <h4>Total: {{ grand_total|floatformat:2 }}</h4>
                     <p class="text-muted">Includes delivery: £{{ delivery|floatformat:2 }}</p>
                     {% if free_delivery_delta > 0 %}
                         <p class="mb-1 text-danger">

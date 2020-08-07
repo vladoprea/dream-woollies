@@ -63,6 +63,7 @@
                     <a href="{% url 'product_detail' product.id %}" class="text-decoration-none text-black">
                         <div class="card h-100">
                             {% if product.image %}
+                                <div class="float-right on-sale-banner text-center"><span>-20%</span></div>
                                 <img class="card-img-top img-fluid img-custom" src="{{ product.image.url }}" alt="{{ product.name }}">
                             {% else %}
                                 <img class="card-img-top img-fluid img-custom" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
@@ -88,9 +89,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <p class="mb-0">{{ product.name }}</p>
-                                        <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
-                                        <p class="lead mb-0 text-left font-weight-bold">£{{ product.discount_price }}</p>
-                                        
+                                        <p class="mb-0 text-left"><strike>£{{ product.price }}</strike></p>
+                                        <p class="mb-0 text-red"><strong>£{{ product.discount_price }}</strong></p>
                                         <p class="text-muted"><small><i class="fas fa-table"></i> {{ product.collection.friendly_name }}</small></p>
                                     </div>
                                 </div>

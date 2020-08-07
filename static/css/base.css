@@ -55,7 +55,7 @@ main {
 /*-------Homepage sections--------*/
 .on-sale-bar {
     height:40px;
-    background-color: rgb(255, 59, 59);
+    background-color: #ff3b3b;
     color: #fff;
 }
 
@@ -174,7 +174,30 @@ a.collection-badge > span.badge:hover {
     color: #1d1141; 
 }
 
-/*   Toast bootstrap positioning  */
+/*---Products ON SALE-----*/
+.on-sale-container {
+    position: relative;
+}
+
+.on-sale-banner {
+    float: left;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+    width: 6rem;
+    height: 3rem;
+    background-color: #ff3b3b;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.text-red {
+    color: #ff3b3b;
+    font-size: 1.3rem;
+}
+
+/*----Toast bootstrap positioning----*/
 .message-container {
     position: fixed;
     top: 85px;
