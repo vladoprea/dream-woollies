@@ -42,24 +42,21 @@
                             {% for item in bag_items %}
                             <tr>
                                 <td class="p-3 w-25">
+                                    {% if item.product.image %}
                                     <img class="img-fluid img-bag rounded border" src="{{ item.product.image.url }}">
+                                    {% else %}
+                                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                    {% endif %}
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                     <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                     <p class="text-muted mt-2"><small><i class="fas fa-table"></i> {{ item.product.collection.friendly_name }}</small></p>
                                     <!--Quantity input with update functionality displayed on small devices.-->
-                                    <form class="form update-form d-sm-none w-50" method="POST" action="{% url 'adjust_bag' item.item_id %}">
-                                        {% csrf_token %}
-                                        <div class="form-group w-75 mb-0">
-                                            <div class="input-group">
-                                                <input class="form-control form-control-sm qty_input" type="number"
-                                                    name="quantity" value="{{ item.quantity }}" min="1" max="10"
-                                                    data-item_id="{{ item.item_id }}"
-                                                    id="id_qty_{{ item.item_id }}">
-                                            </div>
-                                        </div>
-                                    </form>
+                                    <div class="d-sm-none w-50 mb-2">
+                                        <input class="form-control form-control-sm" type="number"
+                                            name="quantity" value="{{ item.quantity }}" min="1" max="10">
+                                    </div>
                                     <a class="update-link text-info d-sm-none"><small>Update qty</small></a>
                                 </td>
                                 <td class="py-3 d-none d-sm-table-cell">

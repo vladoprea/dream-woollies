@@ -71,10 +71,10 @@ def all_products(request):
         'sort': sort,
         'direction': direction,
         'total': total,
-        }
-
+    }
 
     return render(request, 'products/products.html', context)
+
 
 def product_detail(request, product_id):
     """ A view to show one product's details """
@@ -92,6 +92,7 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
+
 def add_review(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
@@ -108,6 +109,7 @@ def add_review(request, product_id):
         else:
             print('fail')
             print(review_form.errors)
+            
     return redirect(reverse('product_detail', args=[product_id]))
         
     

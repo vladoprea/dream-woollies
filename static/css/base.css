@@ -215,6 +215,7 @@ a.collection-badge > span.badge:hover {
     vertical-align: middle;
 }
 
+
 /* -----Stripe payments-----*/
 .StripeElement {
     box-sizing: border-box;
