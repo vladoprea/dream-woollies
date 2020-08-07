@@ -20,16 +20,19 @@ class Product(models.Model):
     description = models.TextField()
     on_sale = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    discount_price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
+    discount_price = models.DecimalField(max_digits=1000, decimal_places=2, default=0)
     height =  models.DecimalField(max_digits=6, decimal_places=2)
     width =  models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
 
-    def discount(self):
+    def _discount(self):
         if self.on_sale == True:
-            self.discount_price = 3
-        return self.discount_price
-
+            new_price = round(self.price - (self.price * 20) / 100, 2)
+        else:
+            new_price = 0
+            
+        return new_price
+    discount_price = property(_discount)
 
     # Calculates the average rating for each product
     def averagereview(self):
