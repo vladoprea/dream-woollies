@@ -147,16 +147,6 @@ a.collection-badge > span.badge:hover {
     color: #fff !important;
 }
 
-
-  
-.card:hover {
-    -webkit-box-shadow: 2px 2px 2px #dedede;
-    -moz-box-shadow: 2px 2px 2px #dedede;
-    box-shadow: 2px 2px 2px #dedede;
-    transform: translate3d(0px, -1px, 0px);
-    transition: all .3s ease-in-out;
-  }
-
 /*Back to top button*/
 .btt-button {
     background-color: #fff;
@@ -210,6 +200,14 @@ a.collection-badge > span.badge:hover {
 .img-bag {
     width: 200px;
     height: 200px;
+}
+
+.card:hover {
+    -webkit-box-shadow: 2px 2px 2px #dedede;
+    -moz-box-shadow: 2px 2px 2px #dedede;
+    box-shadow: 2px 2px 2px #dedede;
+    transform: translate3d(0px, -1px, 0px);
+    transition: all .3s ease-in-out;
 }
 
 .table td {

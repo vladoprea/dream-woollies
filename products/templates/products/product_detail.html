@@ -42,7 +42,7 @@
                             <i class="fas fa-star{% if product.averagereview < 4 %}-o empty{% endif %}"></i>
                             {% if product.averagereview > 4 and product.averagereview < 5 %}<i class="fas fa-star-half-alt"></i>{% endif %}
                             <i class="fas fa-star{% if product.averagereview < 5 %}-o empty{% endif %}"></i>
-                            {{ product.averagereview |stringformat:'.2f'}} / 5
+                            {{ product.averagereview|floatformat:1 }} / 5
                         </small>
                     {% else %}
                         <small class="text-muted"><i class="far fa-star"></i> No ratings</small>

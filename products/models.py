@@ -20,10 +20,16 @@ class Product(models.Model):
     description = models.TextField()
     on_sale = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    discount_price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
     height =  models.DecimalField(max_digits=6, decimal_places=2)
     width =  models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
+
+    def discount(self):
+        if self.on_sale == True:
+            self.discount_price = 3
+        return self.discount_price
+
 
     # Calculates the average rating for each product
     def averagereview(self):
@@ -32,7 +38,7 @@ class Product(models.Model):
         if ratings["average"] is not None:
             avg=float(ratings["average"])
         return avg
-
+    
     def __str__(self):
         return self.name
    
