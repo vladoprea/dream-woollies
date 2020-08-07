@@ -71,18 +71,21 @@
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
-                            {% if product.rating %}
-                                <small class="text-muted">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    {{ product.rating }} / 5
-                                </small>
-                            {% else %}
-                                <small class="text-muted">No Rating</small>
-                            {% endif %}
+                        {% if product.averagereview %}
+                            <small class="text-muted">
+                                <i class="fas fa-star{% if product.averagereview < 1 %}-o empty{% endif %}"></i>
+                                {% if product.averagereview > 1 and product.averagereview < 2 %}<i class="fas fa-star-half-alt"></i>{% endif %}
+                                <i class="fas fa-star{% if product.averagereview < 2 %}-o empty{% endif %}"></i>
+                                {% if product.averagereview > 2 and product.averagereview < 3 %}<i class="fas fa-star-half-alt"></i>{% endif %}                                    <i class="fas fa-star{% if product.averagereview < 3 %}-o empty{% endif %}"></i>
+                                {% if product.averagereview > 3 and product.averagereview < 4 %}<i class="fas fa-star-half-alt"></i>{% endif %}
+                                <i class="fas fa-star{% if product.averagereview < 4 %}-o empty{% endif %}"></i>
+                                {% if product.averagereview > 4 and product.averagereview < 5 %}<i class="fas fa-star-half-alt"></i>{% endif %}
+                                <i class="fas fa-star{% if product.averagereview < 5 %}-o empty{% endif %}"></i>
+                                {{ product.averagereview |stringformat:'.2f'}} / 5
+                            </small>
+                        {% else %}
+                            <small class="text-muted"><i class="far fa-star"></i> No ratings</small>
+                        {% endif %} 
                         </div>
                         <div class="card-footer bg-white border-0 pt-0 text-left">
                             <div class="row">
