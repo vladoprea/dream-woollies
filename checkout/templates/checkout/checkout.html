@@ -39,7 +39,11 @@
                 <tr>
                     <td><p class="my-0"><strong>{{ item.product.name }}</strong></p></td>
                     <td><p class="my-0">{{ item.quantity }}</p></td>
+                    {% if item.product.on_sale == True %}
+                    <td><p class="my-0 mb-3">£{{ item.product.discount_price | calc_subtotal_discount:item.quantity }}</p></td>
+                    {% else %}
                     <td><p class="my-0 mb-3">£{{ item.product.price | calc_subtotal:item.quantity }}</p></td>
+                    {% endif %}
                 </tr>
                 {% endfor %}
                 <tr>

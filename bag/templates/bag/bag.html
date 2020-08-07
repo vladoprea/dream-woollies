@@ -95,8 +95,13 @@
                                 </td>
                                 <!--End quantity input form-->
                                 <td class="py-3">
+                                    {% if item.product.on_sale == True %}
+                                    <p class="my-0 mb-3">£{{ item.product.discount_price | calc_subtotal_discount:item.quantity }}</p>
+                                    <a class="remove-item" id="remove_{{ item.item_id }}"><i class="fas fa-trash-alt mr-md-1"></i><small>Remove</small></a>
+                                    {% else %}
                                     <p class="my-0 mb-3">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     <a class="remove-item" id="remove_{{ item.item_id }}"><i class="fas fa-trash-alt mr-md-1"></i><small>Remove</small></a>
+                                    {% endif %}
                                 </td>
                             </tr>  
                             <!--Horizontal rule inspired from StackOverflow, question 17169094, answer by BeNdErR user--> 
