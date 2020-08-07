@@ -84,7 +84,8 @@ main {
     width: 2.5rem;
 }
 
-.fa-star {
+.fa-star,
+.fa-star-half-alt {
     color: #FFBA00;
 }
 
@@ -135,6 +136,10 @@ main {
 
 .bg-black {
     background-color: #000;
+}
+
+.badge {
+    background-color: #fff;
 }
 
 a.collection-badge > span.badge:hover {
