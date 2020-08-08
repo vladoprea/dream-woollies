@@ -21,20 +21,25 @@
                 <h2 class="mt-3">Products</h2>
                 <hr class="w-50 my-4">
                 <div class="mb-3">
-                    <a class="collection-badge text-decoration-none" href="{% url 'products' %}?collection=wool_paintings">
-                        <span class="p-3 mt-3 badge border text-purple border-purple">Wool Paintings</span>
+                    <a href="{% url 'products' %}?collection=wool_paintings" class="collection-badge text-decoration-none">
+                        <span class="{% if request.get_full_path == '/products/?collection=wool_paintings' %}active{% endif %}
+                        p-3 mt-3 badge border text-purple border-purple">Wool Paintings</span>
                     </a>
-                    <a class="collection-badge text-decoration-none" href="{% url 'products' %}?collection=christmas_deco">
-                        <span class="p-3 mt-3 badge border text-purple border-purple">Christmas Deco</span>
+                    <a href="{% url 'products' %}?collection=christmas_deco" class="collection-badge text-decoration-none">
+                        <span class="{% if request.get_full_path == '/products/?collection=christmas_deco' %}active{% endif %}
+                        p-3 mt-3 badge border text-purple border-purple">Christmas Deco</span>
                     </a>
-                    <a class="collection-badge text-decoration-none" href="{% url 'products' %}?collection=felted_brooches">
-                        <span class="p-3 mt-3 badge border text-purple border-purple">Brooches</span>
+                    <a href="{% url 'products' %}?collection=felted_brooches" class="collection-badge text-decoration-none">
+                        <span class="{% if request.get_full_path == '/products/?collection=felted_brooches' %}active{% endif %}
+                        p-3 mt-3 badge border text-purple border-purple">Brooches</span>
                     </a>
-                    <a class="collection-badge text-decoration-none" href="{% url 'products' %}?collection=home_deco">
-                        <span class="p-3 mt-3 badge border text-purple border-purple">Home Deco</span>
+                    <a  href="{% url 'products' %}?collection=home_deco" class="collection-badge text-decoration-none">
+                        <span class="{% if request.get_full_path == '/products/?collection=home_deco' %}active{% endif %}
+                        p-3 mt-3 badge border text-purple border-purple">Home Deco</span>
                     </a>
-                    <a class="collection-badge text-decoration-none" href="{% url 'products' %}?collection=toys">
-                        <span class="p-3 mt-3 badge border text-purple border-purple">Toys</span>
+                    <a  href="{% url 'products' %}?collection=toys" class="collection-badge text-decoration-none">
+                        <span class="{% if request.get_full_path == '/products/?collection=toys' %}active{% endif %}
+                        p-3 mt-3 badge border text-purple border-purple">Toys</span>
                     </a>
                 </div>
             </div>

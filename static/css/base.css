@@ -147,6 +147,11 @@ a.collection-badge > span.badge:hover {
     color: #fff !important;
 }
 
+.active {
+    background-color: #1d1141;
+    color: #fff !important;
+}
+
 /*Back to top button*/
 .btt-button {
     background-color: #fff;
@@ -242,8 +247,6 @@ a.collection-badge > span.badge:hover {
     width: 100%;
     height: 300px;
 }
-
-
 /* -----Stripe payments-----*/
 .StripeElement {
     box-sizing: border-box;
@@ -362,6 +365,9 @@ a.collection-badge > span.badge:hover {
 @media (max-width: 410px) {
     .nav-link {
         padding: 0px;
+    }
+    .nav-link-mobile{
+        margin-bottom: 8px;
     }
 }
 
