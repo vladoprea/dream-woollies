@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content%}
+<section class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="mt-3">When stories become alive</h2>
+            <hr class="w-50 my-4">
+            <p class="text-muted mt-3 text-center text-md-left">
+                <span class="small"><a href="{% url 'home' %}">Home</a> | </span>
+                <span class="small"><a href="{% url 'products' %}">All Products</a></span>
+            </p>
+        </div>
+    </div>
+        <div class="row mb-4">
+            <div class="col-12 col-md-8 offset-md-2">
+                <img src="{{ MEDIA_URL }}about.jpg" class = "about-img" alt="about">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2 text-justify">
+                <p>
+                    I've always had a thing for <strong>hand crafts and painting.</strong> Ever since we were about 7 years old,
+                    me and my sister used to build furniture and clothes for our dolls, make <em>friendship braceletes,
+                    Peruvian earrings, cardboard masks, origami</em> and whatever else we came across of back then.
+                </p>
+                <p>
+                    Neverthless, the story of this project starts much later, somewhere around September last year when I wanted
+                    to find a <strong>special gift</strong> for a friend's child. I came across this <em>lovely hand-puppet made put of wool(a baby orangutan)</em>
+                    and I instantly fell in love with it. I loved the fact that it was made out of natural fabric and that
+                    the moment after you place it in your hand it becomes alive and can tell stories. After the package arrived
+                    and I got to play around with it I just had to know how it was made... <strong>and that was it!</strong>
+                </p>
+                <p>Since then I have learned to <strong>wet- and needle-felt toys, accessories and wool paintings,</strong>
+                    mostly because I wanted to explore the incredible versatility of this material, but also
+                    in order to find out what I like the most.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

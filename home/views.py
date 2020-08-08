@@ -12,3 +12,9 @@ def index(request):
         'products_on_sale': products_on_sale,
     }
     return render(request, template, context)
+
+def about_us(request):
+    """ View that returns the about us page"""
+    template = 'home/about_us.html'
+
+    return render(request, template)

@@ -238,6 +238,11 @@ a.collection-badge > span.badge:hover {
     vertical-align: middle;
 }
 
+.about-img {
+    width: 100%;
+    height: 300px;
+}
+
 
 /* -----Stripe payments-----*/
 .StripeElement {
