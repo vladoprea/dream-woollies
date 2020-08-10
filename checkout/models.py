@@ -10,6 +10,7 @@ from django_countries.fields import CountryField
 from products.models import Product
 from profiles.models import UserProfile
 
+
 class Order(models.Model):
     """ All fields required as billing details plus a date field
     used as the exact date and time of the order. Also, delivery and total 
@@ -17,7 +18,7 @@ class Order(models.Model):
     """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                                     null=True, blank=True, related_name='orders') #Attach user profile
+                                     null=True, blank=True, related_name='orders')  # Attach user profile
     full_name = models.CharField(max_length=100, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -39,7 +40,7 @@ class Order(models.Model):
         Generate a random and unique number for each order.
         """
         return uuid.uuid4().hex.upper()
-    
+
     def update_total(self):
         """
         Update grand total each time a line time is added,
@@ -65,6 +66,7 @@ class Order(models.Model):
     def __str__(self):
         return self.order_number
 
+
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='orderitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
@@ -76,7 +78,7 @@ class OrderLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        if self.product.on_sale == True:
+        if self.product.on_sale is True:
             self.orderitem_total = self.product.discount_price * self.quantity
         else:
             self.orderitem_total = self.product.price * self.quantity
@@ -87,5 +89,6 @@ class OrderLineItem(models.Model):
         Returns the SKU of the product and the number of the order
         """
         return f'SKU {self.product.sku} on order {self.order.order_number}'
+
     
 

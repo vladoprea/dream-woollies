@@ -14,6 +14,7 @@ from bag.contexts import bag_contents
 import stripe
 import json
 
+
 @require_POST
 def cache_checkout_data(request):
     """
@@ -32,6 +33,7 @@ def cache_checkout_data(request):
         messages.error(request, 'Sorry, your payment cannot be processed right now,\
                     please try again later.')
         return HttpResponse(content=e, status=400)
+
 
 @login_required
 def checkout(request):
@@ -67,9 +69,9 @@ def checkout(request):
                 try:
                     product = Product.objects.get(id=item_id)
                     order_line_item = OrderLineItem(
-                        order = order,
-                        product = product,
-                        quantity = quantity,
+                        order=order,
+                        product=product,
+                        quantity=quantity,
                     )
                     order_line_item.save()
                 except Product.DoesNotExist:
@@ -131,6 +133,7 @@ def checkout(request):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def checkout_success(request, order_number):

@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
 
+
 @login_required
 def profile(request):
     """Display user profile
@@ -26,9 +27,8 @@ def profile(request):
     context = {
         'form': form,
         'orders': orders,
-        'on_profile_page': True, # Helps for not showing the bag on update success message
+        'on_profile_page': True,  # Helps for not showing the bag on update success message
     }
     
-
     return render(request, template, context)
 

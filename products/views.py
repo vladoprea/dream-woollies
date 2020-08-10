@@ -8,6 +8,7 @@ from django.core.paginator import Paginator
 from .models import Product, Collection, Review
 from .forms import ReviewForm
 
+
 def all_products(request):
     """ A view to show all products, including sorting and search queries.
         Pagination included for more than 12 products on page

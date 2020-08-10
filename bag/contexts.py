@@ -3,6 +3,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
+
 def bag_contents(request):
     """
     Calculates the total quantity, total price, delivery costs, 
@@ -15,7 +16,7 @@ def bag_contents(request):
 
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
-        if product.on_sale == True:
+        if product.on_sale is True:
             total += quantity * product.discount_price
         else:
             total += quantity * product.price
@@ -32,7 +33,7 @@ def bag_contents(request):
     else:
         delivery = 0
         free_delivery_delta = 0
-    
+
     grand_total = delivery + total
 
     context = {

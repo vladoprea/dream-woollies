@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models import Avg
 from django.contrib.auth.models import User
 
+
 class Collection(models.Model):
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -21,12 +22,12 @@ class Product(models.Model):
     on_sale = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     discount_price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
-    height =  models.DecimalField(max_digits=6, decimal_places=2)
-    width =  models.DecimalField(max_digits=6, decimal_places=2)
+    height = models.DecimalField(max_digits=6, decimal_places=2)
+    width = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
 
     def _discount(self):
-        if self.on_sale == True:
+        if self.on_sale is True:
             new_price = round(self.price - (self.price * 20) / 100, 2)
         else:
             new_price = 0
@@ -37,9 +38,9 @@ class Product(models.Model):
     # Calculates the average rating for each product
     def averagereview(self):
         ratings = Review.objects.filter(product=self).aggregate(average=Avg('rate'))
-        avg=0
+        avg = 0
         if ratings["average"] is not None:
-            avg=float(ratings["average"])
+            avg = float(ratings["average"])
         return avg
     
     def __str__(self):

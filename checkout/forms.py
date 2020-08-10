@@ -12,4 +12,4 @@ class OrderForm(forms.ModelForm):
         exclude = ['order_number', 'user_profile',
                     'date', 'delivery_cost',
                     'order_total', 'grand_total',
-                    'original_bag','stripe_pid']
+                    'original_bag', 'stripe_pid']

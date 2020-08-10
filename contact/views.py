@@ -2,6 +2,7 @@ from django.shortcuts import render, reverse, redirect
 from django.contrib import messages
 from .forms import ContactForm
 
+
 def contact_form(request):
     "A view that returns the contact page"
     contact_form = ContactForm()

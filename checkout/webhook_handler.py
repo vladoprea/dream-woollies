@@ -13,6 +13,7 @@ from profiles.models import UserProfile
 import json
 import time
 
+
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
@@ -35,7 +36,6 @@ class StripeWH_Handler:
             [user_email]
         )
 
-    
     def handle_event(self, event):
         """
         Handle a generic/unknown/unexpected webhook event
@@ -65,14 +65,14 @@ class StripeWH_Handler:
         username = intent.metadata.username
         profile = UserProfile.objects.get(user__username=username)
         if save_info:
-            profile.full_name=billing_details.name
-            profile.email=billing_details.email
-            profile.phone_number=billing_details.phone
-            profile.country=billing_details.address.country
-            profile.town_or_city=billing_details.address.city
-            profile.street_address=billing_details.address.line1
-            profile.address_addition=billing_details.address.line2,
-            profile.county=billing_details.address.state
+            profile.full_name = billing_details.name
+            profile.email = billing_details.email
+            profile.phone_number = billing_details.phone
+            profile.country = billing_details.address.country
+            profile.town_or_city = billing_details.address.city
+            profile.street_address = billing_details.address.line1
+            profile.address_addition = billing_details.address.line2,
+            profile.county = billing_details.address.state
 
         order_exists = False
         attempt = 1
@@ -119,9 +119,9 @@ class StripeWH_Handler:
                 for item_id, quantity in json.loads(bag).items():
                     product = Product.objects.get(id=item_id)
                     order_line_item = OrderLineItem(
-                        order = order,
-                        product = product,
-                        quantity = quantity,
+                        order=order,
+                        product=product,
+                        quantity=quantity,
                     )
                     order_line_item.save()
             except Exception as e:
