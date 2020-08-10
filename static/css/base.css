@@ -69,6 +69,14 @@ main {
     min-width: 120px;
 }
 
+.price-strike {
+    text-decoration: line-through;
+}
+
+.collection-title {
+    font-size: 1.25rem;
+}
+
 /* From Bulma for icons */
 .icon {
     align-items: center;

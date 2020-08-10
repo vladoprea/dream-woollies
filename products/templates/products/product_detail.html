@@ -51,7 +51,7 @@
                         <small class="text-muted"><i class="far fa-star"></i> No ratings</small>
                     {% endif %}
                     {% if product.on_sale == True %}
-                    <p class="mb-0 text-left"><strike>£{{ product.price }}</strike></p>
+                    <p class="mb-0 text-left price-strike">£{{ product.price }}</p>
                     <p class="mb-0 text-red"><strong>£{{ product.discount_price }}</strong></p>
                     {% else %}
                     <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>

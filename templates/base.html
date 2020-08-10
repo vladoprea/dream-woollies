@@ -54,7 +54,7 @@
       <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
         <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link">
-              <img src="{{ MEDIA_URL }}logo.jpg">
+              <img src="{{ MEDIA_URL }}logo.jpg" alt="logo">
           </a>
         </div>
         <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
@@ -75,13 +75,13 @@
         <div class="col-12 col-lg-3 text-center my-auto py-1 py-lg-0">
           <ul class="list-inline list-unstyled my-0">
             <li class="list-inline-item">
-              <div><a href="https://www.facebook.com/DreamWoollies" class="text-purple" target="_blank"><i class="fab fa-facebook fa-lg"></a></i></div>
+              <div><a href="https://www.facebook.com/DreamWoollies" class="text-purple" target="_blank"><i class="fab fa-facebook fa-lg"></i></a></div>
             </li>
             <li class="list-inline-item">
-              <div><a href="https://www.instagram.com/dream_woollies/?hl=ro" class="text-purple" target="_blank"><i class="fab fa-instagram fa-lg"></a></i></div>
+              <div><a href="https://www.instagram.com/dream_woollies/?hl=ro" class="text-purple" target="_blank"><i class="fab fa-instagram fa-lg"></i></a></div>
             </li>
             <li class="list-inline-item">
-              <div><a href="https://ro.pinterest.com/cucoreanu0393/" class="text-purple" target="_blank"><i class="fab fa-pinterest fa-lg"></a></i></div>
+              <div><a href="https://ro.pinterest.com/cucoreanu0393/" class="text-purple" target="_blank"><i class="fab fa-pinterest fa-lg"></i></a></div>
             </li>
           </ul>
         </div>
@@ -164,7 +164,7 @@
     {% include 'includes/footer.html' %}
     
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
       $('.toast').toast('show');
     </script>
     {% endblock %}
