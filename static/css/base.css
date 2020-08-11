@@ -107,11 +107,13 @@ main {
     background: #37cec9;
     color: #fff;
 }
+
 .shop-now-button {
     background: #1d1141;
     color: white;
     min-width: 160px;
 }
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
