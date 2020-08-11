@@ -241,10 +241,10 @@ a.collection-badge > span.badge:hover {
 }
 
 .card:hover {
-    -webkit-box-shadow: 2px 2px 2px #dedede;
-    -moz-box-shadow: 2px 2px 2px #dedede;
-    box-shadow: 2px 2px 2px #dedede;
-    transform: translate3d(0px, -1px, 0px);
+    -webkit-box-shadow: 0px 4px 2px -2px #cccccc;
+    -moz-box-shadow: 0px 4px 2px -2px #cccccc;
+    box-shadow:  0px 4px 2px -2px #cccccc;
+    transform: translate3d(0px, -2px, 0px);
     transition: all .3s ease-in-out;
 }
 

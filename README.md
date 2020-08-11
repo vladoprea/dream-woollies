@@ -315,7 +315,7 @@ git push
 
 1. Deploy branch in Heroku
 
-1. In settings.py add <https://dream-woollies-ms4.herokuapp.com/> to allowed
+1. In settings.py add <https://dream-woollies-ms4.herokuapp.com/> to Allowed Hosts
 
 ## Credits
 
