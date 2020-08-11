@@ -240,8 +240,7 @@ The deployed site can be found here: <https://dream-woollies-ms4.herokuapp.com/>
 2. On the Resources tab, in the Add-ons field look for Heroku Postgres, select the default Hobby Dev - Free tier, then click the Provision button. This will provision a Postgres Database for you.
 3. In Heroku, go on settings tab and click Reveal Config Vars.
 4. Add the values from your env.py file to heroku:
- '''
-
+'''
 AWS_ACCESS_KEY_ID - your value
 AWS_SECRET_ACCESS_KEY - your value
 DATABASE_URL - your value
