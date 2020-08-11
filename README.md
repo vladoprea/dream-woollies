@@ -190,24 +190,34 @@ This application can run locally or deployed to a live environment
 The example provided uses VSCode as a code editor and Windows as an operating system.
 
 1. Save a copy of the github repository located at <https://github.com/vladoprea/dream-woollies> by clicking the 'download.zip' button at the top of the page and extracting the zip file to your chosen folder. If you have Git installed on your system, you can clone the repository with the following command:
-'''
-$ git clone <https://github.com/maliahavlicek/ms4_challenger.git>
-'''
-2. Set up a virtual environment via this command in the terminal session:
-'''
+
+```python
+git clone <https://github.com/maliahavlicek/ms4_challenger.git>
+```
+
+1. Set up a virtual environment via this command in the terminal session:
+
+```python
 python -m venv env
-'''
-3. Activate the .venv with the command:
-'''
+```
+
+1. Activate the .venv with the command:
+
+```python
 \env\Scripts\activate.bat
-'''
-4. Install all required modules with the command:
-'''
+```
+
+1. Install all required modules with the command:
+
+```python
 pip install -r requirements.txt
-'''
-5. Create a env.py file and add it to your .gitignore
-6. Copy the following into the env.py file:
-'''
+```
+
+1. Create a env.py file and add it to your .gitignore
+
+1. Copy the following into the env.py file:
+
+```python
 import os
 
 os.environ['SECRET_KEY'] = 'your value'
@@ -218,29 +228,40 @@ os.environ['STRIPE_WH_SECRET'] = 'your value'
 os.environ['AWS_ACCESS_KEY_ID'] = 'your value'
 os.environ['AWS_SECRET_ACCESS_KEY'] = 'your value'
 os.environ['DEVELOPMENT'] = '1'
-'''
-7. Set up the databases by running the following management command in your terminal:
-'''
+```
+
+1. Set up the databases by running the following management command in your terminal:
+
+```python
 python manage.py migrate
-'''
-8. Create the superuser so you can have access to the django admin:
-'''
+```
+
+1. Create the superuser so you can have access to the django admin:
+
+```python
 python manage.py createsuperuser
-'''
-9. Start your server by running the following command in your terminal:
-'''
+```
+
+1. Start your server by running the following command in your terminal:
+
+```python
 python manage.py runserver
-'''
+```
 
 ### Deploy to Heroku
 
 The deployed site can be found here: <https://dream-woollies-ms4.herokuapp.com/>
 
 1. Login to Heroku and create a new app
-2. On the Resources tab, in the Add-ons field look for Heroku Postgres, select the default Hobby Dev - Free tier, then click the Provision button. This will provision a Postgres Database for you.
-3. In Heroku, go on settings tab and click Reveal Config Vars.
-4. Add the values from your env.py file to heroku:
-'''
+
+1. On the Resources tab, in the Add-ons field look for Heroku Postgres, select the default Hobby Dev - Free
+tier, then click the Provision button. This will provision a Postgres Database for you.
+
+1. In Heroku, go on settings tab and click Reveal Config Vars.
+
+1. Add the values from your env.py file to heroku:
+
+```python
 AWS_ACCESS_KEY_ID - your value
 AWS_SECRET_ACCESS_KEY - your value
 DATABASE_URL - your value
@@ -251,36 +272,50 @@ STRIPE_PUBLIC_KEY - your value
 STRIPE_SECRET_KEY - your value
 STRIPE_WH_SECRET - your value
 USE_AWS - True
-'''
-5. Set up the databases with the following command:
-'''
+```
+
+1. Set up the databases with the following command:
+
+```python
 python manage.py migrate
-'''
-6. Create the superuser for the postgres database so you can have access to the django admin:
-'''
+```
+
+1. Create the superuser for the postgres database so you can have access to the django admin:
+
+```python
 python manage.py createsuperuser
-'''
-7. Preload products and collections using following commands(the order is important):
-'''
+```
+
+1. Preload products and collections using following commands(the order is important):
+
+```python
 python manage.py loaddata collections.json
 python manage.py loaddata products.json
-'''
-8. Save all the requirements:
-'''
+```
+
+1. Save all the requirements:
+
+```python
 pip freeze > requirements.txt
-'''
-9. Create Procfile:
-'''
+```
+
+1. Create Procfile:
+
+```python
 echo web: gunicorn dream_woollies.wsgi:application > Procfile
-'''
-10. Add the files and push them to Github:
-'''
+```
+
+1. Add the files and push them to Github:
+
+```python
 git add .
 git commit
 git push
-'''
-11. Deploy branch in Heroku
-12. In settings.py add <https://dream-woollies-ms4.herokuapp.com/> to allowed
+```
+
+1. Deploy branch in Heroku
+
+1. In settings.py add <https://dream-woollies-ms4.herokuapp.com/> to allowed
 
 ## Credits
 
