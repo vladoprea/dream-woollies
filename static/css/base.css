@@ -108,6 +108,10 @@ main {
     color: #fff;
 }
 
+.btn-light {
+    border-color: #cccccc;
+}
+
 .shop-now-button {
     background: #1d1141;
     color: white;

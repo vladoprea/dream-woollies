@@ -115,7 +115,7 @@ The mock-ups created for this project are only for 2 types of devices: desktop a
 
 * contains a form for the delivery details of the user
 * contains the payment form from Stripe that takes: card number, CVC, expiry date and ZIP code
-* contains an order summary, as a table with products name, quantity selected, subtotal. Also, the delivery costs, grand total and a button that redirects to bag for adusting it if needed
+* contains an order summary, as a table with products name, quantity selected, subtotal. Also, the delivery costs, grand total and a button that redirects to bag for adusting it if needed. This feature is not available on small devices.
 
 #### Emails
 

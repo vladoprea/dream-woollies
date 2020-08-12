@@ -135,12 +135,57 @@
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-purple btn-lg d-block d-sm-inline-block mt-2">
-                                        <span class="text-uppercase">Secure Checkout</span>
-                                        <span class="icon">
-                                            <i class="fas fa-lock"></i>
-                                        </span>
-                                    </a>
+                                    {% if user.is_authenticated %}
+                                        <a href="{% url 'checkout' %}" class="btn btn-purple btn-lg d-block d-sm-inline-block mt-2">
+                                            <span class="text-uppercase">Secure Checkout</span>
+                                            <span class="icon">
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                        </a>
+                                    {% else %} 
+                                        <!-- Button trigger modal -->
+                                        <a class="btn btn-purple btn-lg d-block d-sm-inline-block mt-2" data-toggle="modal" data-target="#exampleModalCenter">
+                                            <span class="text-uppercase text-white">Secure Checkout</span>
+                                            <span class="icon text-white">
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                        </a>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header payment-custom">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Dream Woollies Checkout</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col text-center">
+                                                            <p>To have access to your profile and order history:</p>
+                                                            <a href="{% url 'account_signup' %}" class="btn btn-lg btn-dark">
+                                                                <span class="text-uppercase">Register</span>
+                                                            </a>
+                                                            <p class="my-1">or</p>
+                                                            <a href="{% url 'account_login' %}" class="btn btn-lg btn-light">
+                                                                <span class="text-uppercase">Login</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer m-auto">
+                                                    <a href="{% url 'checkout' %}" class="btn btn-purple btn-lg d-block d-sm-inline-block mt-2">
+                                                        <span class="text-uppercase">Continue as guest</span>
+                                                        <span class="icon">
+                                                            <i class="fas fa-lock"></i>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
                                 </td>
                             </tr>
                         </tbody>
