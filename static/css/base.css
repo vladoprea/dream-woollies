@@ -171,6 +171,13 @@ a.collection-badge > span.badge:hover {
     color: #fff !important;
 }
 
+.list-inline .list-inline-item a:hover {
+    color: #17a2b8 !important;
+}
+
+.list-unstyled h4 a:hover {
+    color: #17a2b8 !important;
+}
 .active {
     background-color: #1d1141;
     color: #fff !important;

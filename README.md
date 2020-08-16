@@ -59,6 +59,7 @@ The design of this site is simple but catchy. It ensures that the products are w
 * ![#37cec9](https://via.placeholder.com/15/37cec9/000000?text=+) `#37cec9` used for buttons that redirect you to pages or actions regarding products
 * ![#ff3b3b](https://via.placeholder.com/15/ff3b3b/000000?text=+) `#ff3b3b` used to draw attention for on sale products
 * ![#def5ff4d](https://via.placeholder.com/15/def5ff4d/000000?text=+) `#def5ff4d` background color for home page and products page
+* ![#17a2b8](https://via.placeholder.com/15/17a2b8/000000?text=+) `#17a2b8` color displayed when hovering over links on header or footer
 
 ### Mock-ups
 
