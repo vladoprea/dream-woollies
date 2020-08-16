@@ -233,6 +233,15 @@ a.collection-badge > span.badge:hover {
     font-size: 1.3rem;
 }
 
+.admin-user {
+    text-decoration: line-through;
+}
+
+.admin-user-soon {
+    color: #ff3b3b;
+    font-size: 12px;
+}
+
 /*----Toast bootstrap positioning----*/
 .message-container {
     position: fixed;
@@ -277,6 +286,14 @@ a.collection-badge > span.badge:hover {
 .about-img {
     width: 100%;
     height: 300px;
+}
+
+/*-----Forms-----*/
+.form-bg {
+    background-color: #fafafa;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+    box-shadow:  0 0 1px rgba(0, 0, 0, 0.8);
 }
 /* -----Stripe payments-----*/
 .StripeElement {

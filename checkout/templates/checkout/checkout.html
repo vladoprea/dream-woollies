@@ -69,17 +69,19 @@
         <div class="col-12 col-sm-6 order-first">
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
-                <fieldset class="form-group">
-                    <legend class="mb-0">
-                        <h4 class="mb-0">Delivery details</h4>
-                    </legend>
-                    <p class="text-muted font-weight-light pb-2"><small>(fields marked with * are mandatory)</small></p>
-                    {{ order_form|crispy }}
-                    <div class="form-check form-check-inline float-right mr-0">
-                        <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
-                        <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save_info" checked>
-                    </div>
-                </fieldset>
+                <div class="form-bg p-3">
+                    <fieldset class="form-group">
+                        <legend class="mb-0">
+                            <h4 class="mb-0">Delivery details</h4>
+                        </legend>
+                        <p class="text-muted font-weight-light pb-2"><small>(fields marked with * are mandatory)</small></p>
+                        {{ order_form|crispy }}
+                        <div class="form-check form-check-inline float-right mr-0">
+                            <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
+                            <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save_info" checked>
+                        </div>
+                    </fieldset>
+                </div>
                 <div class="mt-5 mb-4 payment-custom border">
                     <fieldset class="px-3">
                         <legend class="fieldset-label w-auto"><h4 class="mt-3">Payment</h4></legend>

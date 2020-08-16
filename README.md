@@ -60,6 +60,9 @@ The design of this site is simple but catchy. It ensures that the products are w
 * ![#ff3b3b](https://via.placeholder.com/15/ff3b3b/000000?text=+) `#ff3b3b` used to draw attention for on sale products
 * ![#def5ff4d](https://via.placeholder.com/15/def5ff4d/000000?text=+) `#def5ff4d` background color for home page and products page
 * ![#17a2b8](https://via.placeholder.com/15/17a2b8/000000?text=+) `#17a2b8` color displayed when hovering over links on header or footer
+* ![#fafafa](https://via.placeholder.com/15/fafafa/000000?text=+) `#fafafa` background color used for forms styling
+
+### Future improvements
 
 ### Mock-ups
 
@@ -179,6 +182,8 @@ The mock-ups created for this project are only for 2 types of devices: desktop a
 * Javascript
 * Python 3.8
 
+### Databases
+
 ## Tesing
 
 ## Deployment
@@ -191,62 +196,62 @@ The example provided uses VSCode as a code editor and Windows as an operating sy
 
 1. Save a copy of the github repository located at <https://github.com/vladoprea/dream-woollies> by clicking the 'download.zip' button at the top of the page and extracting the zip file to your chosen folder. If you have Git installed on your system, you can clone the repository with the following command:
 
-```python
-git clone <https://github.com/maliahavlicek/ms4_challenger.git>
-```
+    ```python
+    git clone <https://github.com/maliahavlicek/ms4_challenger.git>
+    ```
 
 1. Set up a virtual environment via this command in the terminal session:
 
-```python
-python -m venv env
-```
+    ```python
+    python -m venv env
+    ```
 
 1. Activate the .venv with the command:
 
-```python
-\env\Scripts\activate.bat
-```
+    ```python
+    \env\Scripts\activate.bat
+    ```
 
 1. Install all required modules with the command:
 
-```python
-pip install -r requirements.txt
-```
+    ```python
+    pip install -r requirements.txt
+    ```
 
 1. Create a env.py file and add it to your .gitignore
 
 1. Copy the following into the env.py file:
 
-```python
-import os
+    ```python
+    import os
 
-os.environ['SECRET_KEY'] = 'your value'
-os.environ['DATABASE_URL'] = 'your value'
-os.environ['STRIPE_PUBLIC_KEY'] = 'your value'
-os.environ['STRIPE_SECRET_KEY'] = 'your value'
-os.environ['STRIPE_WH_SECRET'] = 'your value'
-os.environ['AWS_ACCESS_KEY_ID'] = 'your value'
-os.environ['AWS_SECRET_ACCESS_KEY'] = 'your value'
-os.environ['DEVELOPMENT'] = '1'
-```
+    os.environ['SECRET_KEY'] = 'your value'
+    os.environ['DATABASE_URL'] = 'your value'
+    os.environ['STRIPE_PUBLIC_KEY'] = 'your value'
+    os.environ['STRIPE_SECRET_KEY'] = 'your value'
+    os.environ['STRIPE_WH_SECRET'] = 'your value'
+    os.environ['AWS_ACCESS_KEY_ID'] = 'your value'
+    os.environ['AWS_SECRET_ACCESS_KEY'] = 'your value'
+    os.environ['DEVELOPMENT'] = '1'
+    ```
 
 1. Set up the databases by running the following management command in your terminal:
 
-```python
-python manage.py migrate
-```
+    ```python
+    python manage.py migrate
+    ```
 
 1. Create the superuser so you can have access to the django admin:
 
-```python
-python manage.py createsuperuser
-```
+    ```python
+    python manage.py createsuperuser
+    ```
 
 1. Start your server by running the following command in your terminal:
 
-```python
-python manage.py runserver
-```
+    ```python
+    python manage.py runserver
+    ```
 
 ### Deploy to Heroku
 
@@ -261,57 +266,57 @@ tier, then click the Provision button. This will provision a Postgres Database f
 
 1. Add the values from your env.py file to heroku:
 
-```python
-AWS_ACCESS_KEY_ID - your value
-AWS_SECRET_ACCESS_KEY - your value
-DATABASE_URL - your value
-EMAIL_HOST_PASS - your value
-EMAIL_HOST_USER - your value
-SECRET_KEY - your value
-STRIPE_PUBLIC_KEY - your value
-STRIPE_SECRET_KEY - your value
-STRIPE_WH_SECRET - your value
-USE_AWS - True
-```
+    ```python
+    AWS_ACCESS_KEY_ID - your value
+    AWS_SECRET_ACCESS_KEY - your value
+    DATABASE_URL - your value
+    EMAIL_HOST_PASS - your value
+    EMAIL_HOST_USER - your value
+    SECRET_KEY - your value
+    STRIPE_PUBLIC_KEY - your value
+    STRIPE_SECRET_KEY - your value
+    STRIPE_WH_SECRET - your value
+    USE_AWS - True
+    ```
 
 1. Set up the databases with the following command:
 
-```python
-python manage.py migrate
-```
+    ```python
+    python manage.py migrate
+    ```
 
 1. Create the superuser for the postgres database so you can have access to the django admin:
 
-```python
-python manage.py createsuperuser
-```
+    ```python
+    python manage.py createsuperuser
+    ```
 
 1. Preload products and collections using following commands(the order is important):
 
-```python
-python manage.py loaddata collections.json
-python manage.py loaddata products.json
-```
+    ```python
+    python manage.py loaddata collections.json
+    python manage.py loaddata products.json
+    ```
 
 1. Save all the requirements:
 
-```python
-pip freeze > requirements.txt
-```
+    ```python
+    pip freeze > requirements.txt
+    ```
 
 1. Create Procfile:
 
-```python
-echo web: gunicorn dream_woollies.wsgi:application > Procfile
-```
+    ```python
+    echo web: gunicorn dream_woollies.wsgi:application > Procfile
+    ```
 
 1. Add the files and push them to Github:
 
-```python
-git add .
-git commit
-git push
-```
+    ```python
+    git add .
+    git commit
+    git push
+    ```
 
 1. Deploy branch in Heroku
 

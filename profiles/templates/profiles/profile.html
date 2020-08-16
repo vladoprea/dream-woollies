@@ -22,7 +22,8 @@
     </div>
     <div class="row">
         <!--Delivery information form with update info option-->
-        <div class="col-12 col-md-6 pr-5 pb-4">
+        
+        <div class="col-12 col-md-6 p-3 form-bg">
             <h4>My delivery informations</h4>
             <form class="mt-4 form-group" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
@@ -31,7 +32,7 @@
             </form>
         </div>
         <!--Order history of the user purchases-->
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 pt-5 pt-md-0 pl-0 pl-md-4">
             <h5>Order History</h5>
            <div class="table-responsive order-history mt-4">
               <table class="table table-sm table-borderless">
