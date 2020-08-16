@@ -53,16 +53,19 @@
                                     <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                     <p class="text-muted mt-2"><small><i class="fas fa-table"></i> {{ item.product.collection.friendly_name }}</small></p>
                                     <!--Quantity input with update functionality displayed on small devices.-->
-                                    <div class="d-sm-none w-50 mb-2">
+                                    <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                        {% csrf_token %}
+                                        <div class="d-sm-none w-50 mb-2">
                                         <input class="form-control form-control-sm" type="number"
                                             name="quantity" value="{{ item.quantity }}" min="1" max="10">
-                                    </div>
-                                    <a class="update-link text-info d-sm-none"><small>Update qty</small></a>
+                                        </div>
+                                        <input type="submit" class="update-link text-info d-sm-none border-0" value="Update qty">
+                                    </form>
                                 </td>
                                 <td class="py-3 d-none d-sm-table-cell">
                                     {% if item.product.on_sale == True %}
                                         <p class="my-0 text-red"><strong>£{{ item.product.discount_price }}</strong></p>
-                                        <p class="mb-4"><strike>£{{ item.product.price }}</strike></p> 
+                                        <p class="mb-4 price-strike">£{{ item.product.price }}</p> 
                                     {% else %}
                                         <p class="mb-4">£{{ item.product.price }}</p>
                                     {% endif %}
@@ -95,8 +98,8 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <input type="submit" class="update-link text-info border-0" value="Update">
                                     </form>
-                                    <a class="update-link text-info"><small>Update</small></a>
                                 </td>
                                 <!--End quantity input form-->
                                 <td class="py-3">
@@ -153,36 +156,36 @@
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header payment-custom">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">Dream Woollies Checkout</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="row">
-                                                        <div class="col text-center">
-                                                            <p>To have access to your profile and order history:</p>
-                                                            <a href="{% url 'account_signup' %}" class="btn btn-lg btn-dark">
-                                                                <span class="text-uppercase">Register</span>
-                                                            </a>
-                                                            <p class="my-1">or</p>
-                                                            <a href="{% url 'account_login' %}" class="btn btn-lg btn-light">
-                                                                <span class="text-uppercase">Login</span>
-                                                            </a>
+                                                <div class="modal-content">
+                                                    <div class="modal-header payment-custom">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Dream Woollies Checkout</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col text-center">
+                                                                <p>To have access to your profile and order history:</p>
+                                                                <a href="{% url 'account_signup' %}" class="btn btn-lg btn-dark">
+                                                                    <span class="text-uppercase">Register</span>
+                                                                </a>
+                                                                <p class="my-1">or</p>
+                                                                <a href="{% url 'account_login' %}" class="btn btn-lg btn-light">
+                                                                    <span class="text-uppercase">Login</span>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <div class="modal-footer m-auto">
+                                                        <a href="{% url 'checkout' %}" class="btn btn-purple btn-lg d-block d-sm-inline-block mt-2">
+                                                            <span class="text-uppercase">Continue as guest</span>
+                                                            <span class="icon">
+                                                                <i class="fas fa-lock"></i>
+                                                            </span>
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                                <div class="modal-footer m-auto">
-                                                    <a href="{% url 'checkout' %}" class="btn btn-purple btn-lg d-block d-sm-inline-block mt-2">
-                                                        <span class="text-uppercase">Continue as guest</span>
-                                                        <span class="icon">
-                                                            <i class="fas fa-lock"></i>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
                                             </div>
                                         </div>
                                     {% endif %}

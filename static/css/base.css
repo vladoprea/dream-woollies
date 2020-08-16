@@ -183,6 +183,11 @@ a.collection-badge > span.badge:hover {
     color: #fff !important;
 }
 
+.update-link {
+    background-color: #fff;
+    font-size: 0.85rem;
+}
+
 /*Back to top button*/
 .btt-button {
     background-color: #fff;
