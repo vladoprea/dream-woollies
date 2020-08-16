@@ -1,8 +1,12 @@
 <div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item"><a href="{% url 'home' %}" class="font-weight-bold nav-link nav-link-mobile text-black mr-5">Home</a></li>
-        <li class="nav-item"><a href="{% url 'products' %}" class="font-weight-bold nav-link nav-link-mobile text-black mr-5">All Products</a></li>
-        <li class="nav-item"><a href="{% url 'products' %}?on_sale" class="font-weight-bold nav-link nav-link-mobile text-black mr-5">ON SALE</a></li>
-        <li class="nav-item"><a href="{% url 'contact' %}" class="font-weight-bold nav-link nav-link-mobile text-black mr-5">Contact</a></li>
+    <ul class="navbar-nav w-auto">
+        <li class="nav-item"><a href="{% url 'home' %}" class="font-weight-bold nav-link nav-link-mobile text-black mr-5
+            {% if request.get_full_path == '/' %}current{% endif %}">Home</a></li>
+        <li class="nav-item"><a href="{% url 'products' %}" class="font-weight-bold nav-link nav-link-mobile text-black mr-5
+            {% if request.get_full_path == '/products/' %}current{% endif %}">All Products</a></li>
+        <li class="nav-item"><a href="{% url 'products' %}?on_sale" class="font-weight-bold nav-link nav-link-mobile text-black mr-5
+            {% if request.get_full_path == '/products/?on_sale' %}current{% endif %}">ON SALE</a></li>
+        <li class="nav-item"><a href="{% url 'contact' %}" class="font-weight-bold nav-link nav-link-mobile text-black mr-5
+            {% if request.get_full_path == '/contact/' %}current{% endif %}">Contact</a></li>
     </ul>
 </div>

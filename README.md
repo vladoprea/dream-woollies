@@ -58,7 +58,6 @@ The design of this site is simple but catchy. It ensures that the products are w
 * ![#1d1141](https://via.placeholder.com/15/1d1141/000000?text=+) `#1d1141` is the logo color which I used for call to action buttons
 * ![#37cec9](https://via.placeholder.com/15/37cec9/000000?text=+) `#37cec9` used for buttons that redirect you to pages or actions regarding products
 * ![#ff3b3b](https://via.placeholder.com/15/ff3b3b/000000?text=+) `#ff3b3b` used to draw attention for on sale products
-* ![#FFBA00](https://via.placeholder.com/15/FFBA00/000000?text=+) `#FFBA00` main navigation bar
 * ![#def5ff4d](https://via.placeholder.com/15/def5ff4d/000000?text=+) `#def5ff4d` background color for home page and products page
 
 ### Mock-ups
