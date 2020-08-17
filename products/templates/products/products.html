@@ -157,7 +157,11 @@
                                     <a href="?page=1 {% if collection_page %}&collection={{ collection_page }}
                                                      {% elif sort %}&sort={{ sort }}&direction={{ direction}}
                                                      {% elif query_page %}&q={{ query_page }}
-                                                     {% endif %}" class="mr-3">First</a>
+                                                     {% endif %}">First</a>
+                                </span>
+                            </li>
+                            <li class="page-item">   
+                                <span class="page-link">
                                     <a href="?page={{ products.previous_page_number }} {% if collection_page %}&collection={{ collection_page }}
                                                                                        {% elif sort %}&sort={{ sort }}&direction={{ direction}}
                                                                                        {% elif query_page %}&q={{ query_page }}
@@ -179,10 +183,14 @@
                                                                                     {% elif sort %}&sort={{ sort }}&direction={{ direction}}
                                                                                     {% elif query_page %}&q={{ query_page }}
                                                                                     {% endif %}">Next</a>
+                                </span>
+                            </li>
+                            <li class="page-item">
+                                <span class="page-link">
                                      <a href="?page={{ products.paginator.num_pages }} {% if collection_page %}&collection={{ collection_page }}
                                                                                                     {% elif sort %}&sort={{ sort }}&direction={{ direction}}
                                                                                                     {% elif query_page %}&q={{ query_page }}
-                                                                                                    {% endif %}" class="ml-3">Last</a>
+                                                                                                    {% endif %}">Last</a>
                                 </span>
                             </li>
                         {% endif %}
