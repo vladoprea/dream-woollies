@@ -2,7 +2,7 @@
 
 Dream Woollies e-commerce is a site created as the 4th and last Milestone Project inside Code Institute fullstack developer course. The main purpose of this site is to present and sell wet and needle felted toys and durable accessories made from fine merino wool. All the products are handmade, unique and created from natural materials by a friend of mine.
 
-The app functionality was made using Django3 framework to encourage rapid development. VScode was my choice of code editor. During development, I used sqlite as a database and after deployment on Heroku, I switched to Postgres to ensure that any data entered was visible in my deployed application.
+The app functionality was made using Django3 framework to encourage rapid development. VScode was my choice of code editor. During development, I used Sqlite3 as a database and after deployment on Heroku, I switched to Postgres to ensure that any data entered was visible in my deployed application.
 
 The deployed link for the site is: <https://dream-woollies-ms4.herokuapp.com/>
 
@@ -63,6 +63,9 @@ The design of this site is simple but catchy. It ensures that the products are w
 * ![#fafafa](https://via.placeholder.com/15/fafafa/000000?text=+) `#fafafa` background color used for forms styling
 
 ### Future improvements
+
+* overlay with a spinning wheel when the payment is processed
+* images should be clear, without being stretched regarding the screen size of the device
 
 ### Mock-ups
 
@@ -182,9 +185,220 @@ The mock-ups created for this project are only for 2 types of devices: desktop a
 * Javascript
 * Python 3.8
 
-### Databases
+## Testing
 
-## Tesing
+For this app, testing was made manually and with validator services. During development I constantly used Chrome Developer Tools in order to ensure responsivness on all devices.
+During development, in settings.py, Django's debugger was set to:
+
+```python
+debug = False
+```
+
+This was so to ensure that when the app encounters an error, Django gives a detailed report of what happened and why the error occured.
+
+### Validators
+
+* [W3C HTML Validator](https://validator.w3.org/) - this tool checks the .html files validity
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - this tool checks the .css files validity
+* [Pep8 online](http://pep8online.com/) - this ensures that the python code is legit and does not contain formatting errors
+
+### Manual testing
+
+Manual testing was done on a series of different screen devices and browsers as Chrome, Firefox, Edge, Safari , Opera and Mi Browser. I used different scenarios for each feature on every device. The deployed app was sent to friends and family to ensure I have covered enough devices and to get feedback from real life users about design, UX and functionality.
+
+#### Navbar
+
+* check if social icons are hidden on small than medium devices
+* click on each navbar link to see if they open the designated pages. Notice if hover effects work and if the active state of the link is highlighted when on page
+* on smaller than medium devices, check if the toggle button and links work
+
+#### Search bar
+
+* type in different existent keywords from name or description of the product. See if the results for the search are correct
+* type an inexistent keyword from name or description of the product. See if it gives no results
+* make a search without an input. See if your receive an error and you get redirected to the products page
+
+#### Home
+
+* check responsiveness for products and collections cards display on different devices
+* click on each On Sale products to see if the product detail page opens
+* click on each collection card to see if you are redirected to the designated collection page
+
+#### All products
+
+* check if all products are displayed and the number of them is correct
+* check if pagination links work properly
+* click on each collection filter bag to see if they work properly. See if the badge remain highlighted when on selected page. Check if the pagination links work
+* select each sorting option and see if the sorting works as intended
+
+#### Product details
+
+* check responsiveness of product details display on different screens
+* choose a quantity and click add to cart. See if a success message appears that contains the product selected, total price, delivery and button to go for checkout
+* try to type a bigger than 10 or smaller than 1 quantity. See if you get an error message
+* remove 1 as default quantity. Click add to bag. See if you get an error message
+* try to add letters as quantity. See if you get an error message
+* check if a user that is not logged in can write a review
+* check if a logged in user can write a review
+* see if the reviews are displayed correctly: username, date, star rating, subject and body
+* introduce different star ratings. Check if the star rating selected is displayed correct. Check if the average star rating is calculated correct and displayed properly
+
+#### On sale
+
+* Check if all the products that are on sale are available
+* calculate the discounted prices to see if it is the correct amount
+* click on each product to see if the product details page contains the correct discount offer
+
+#### Bag page
+
+* click on the bag icon from the header to see if you get to the bag page
+* check if the selected products and the correct quantity are inside the bag
+* try to type a bigger than 10 or smaller than 1 quantity and click update. See if you get an error message
+* remove 1 as default quantity. Click update. See if you get an error message
+* try to add letters as quantity. See if you get an error message
+* use increment and decrement buttons and click update. See if the updated quantity is the one selected
+* click remove and see if the product is removed from the bag
+* remove all products and see if the back is empty
+* check if the total price, delivery and grand total are calculated correct
+
+#### Checkout page
+
+* as a user not logged in click on secure checkout button. Check if a modal opens that gives option to login, register or continue as guest. Click continue as guest and see if you are redirected to checkout page
+* as logged in user, click on secure checkout button and see if you are redirected to checkout page
+* on checkout page, see if the order summary is displayed with the selected products. On mobile, see if the order summary is hidden
+* as a user not logged in see if the delivery information form fields are empty
+* as a logged in user see if the delivery information fields are prepopulated with your details provided in your profile
+
+#### Payment
+
+For payments testing the following details should be use:
+
+* Card number: 4242 4242 4242 4242
+* CVC: any 3 digits
+* Date: any future date
+* ZIP Code: any 5 digits
+
+Try the following scenarios:
+
+* type a wrong card number
+* type the correct payment details but do not provide your delivery details, see if you get error messages from the form
+
+#### Checkout success
+
+* on checkout success page you should have a message that contains your order number and the email address where you'll get details with your order
+* as a guest user you should find a button that redirects to all products page
+* as a logged in user you should have a button that redirects to all products page and a button that redirects you to your order history which is on your profile page
+
+#### Profile page
+
+* profile page is available only for logged in users
+* check if the order history contains the products bought, the order number received and the exact total price
+* type your details in the delivery information form. Click update then go to the checkout page. Check if the delivery information form from checkout page is prepopulated with the correct informations
+* try to update your delivery informations without completing all the fields required. See if you get error messages
+
+#### Contact page
+
+* type in details and message in the contact form. Send the message. See if you get an success message
+* try to send message without completing all the fields required in the form. See if you get an error message
+
+### Errors and bugs
+
+#### Server error 500 1
+
+* Go to All Products, select Sorting by Rating Low to High and Sorting by Rating High to Low
+* Both options lead to server error 500
+
+##### Solution 1
+
+* removed the options to Sort by Rating
+
+#### Server Error 500 2
+
+* Go to any Product details page
+* Remove 1 as default quantity
+* Click Add to Bag
+
+##### Solution 2
+
+* this error occured in the views.py file from the bag app when an user introduced an empty string as a quantity
+* I appended '0' to the int() every time an user introduces a quantity:
+
+    ```python
+    quantity = int('0'+request.POST.get('quantity'))
+    ```
+
+* When the quantity is equal to 0 , an error message is received:
+
+```python
+    if quantity > 0:
+        if item_id in list(bag.keys()):
+            bag[item_id] += quantity
+        else:
+            bag[item_id] = quantity
+            messages.success(request, f'Added {product.name} to your bag')
+    else:
+        messages.error(request, 'Value must greather than or equal to 1.')
+```
+
+#### Server error 500 3
+
+* go to Bag page
+* remove the default quantity
+* click update
+
+##### Solution 3
+
+* this error occured in the views.py file from the bag app when an user introduced an empty string as a quantity when adjusting its bag
+* I appended '0' to the int() every time an user introduces a quantity:
+
+    ```python
+    quantity = int('0'+request.POST.get('quantity'))
+    ```
+
+* When the quantity is equal to 0 , an error message is received:
+
+    ```python
+     if quantity > 0:
+        bag[item_id] = quantity
+    else:
+        messages.error(request, 'Value must greather than or equal to 1.\
+         If you do not need this product, click on the Remove button.')
+    ```
+
+#### Update quantity doesn't work
+
+* Go to bag page
+* use increment, decrement buttons or introduce a value
+* click update
+* nothing happens and an error message is not received
+
+##### Solution for update
+
+* moved the update button link inside the form
+
+#### Adding same product twice or more in the bag doesn't get a success message
+
+* go to any product details page
+* choose a quantity and click add to bag. A success message is displayed
+* change the quantity and click add to bag. Success message is not displayed
+* check the bag. The product was added each time
+
+##### Solution for success message
+
+* to be fixed in future update
+
+#### Full name is not prepopulated
+
+* as a logged in user, go to your profile and fill in all the details required in the delivery form
+* click update and go to checkout page. Notice that the full name field is empty
+
+##### Solution for full name
+
+* to be fixed in future update
+
+#### Display errors
+
+* Some images are distorsionated especially on devices between 400px and 600px. This is due to giving images a fixed height and width. To be fixed in a future update.
 
 ## Deployment
 
